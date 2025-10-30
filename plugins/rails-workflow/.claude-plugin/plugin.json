@@ -1,7 +1,7 @@
 {
   "name": "rails-workflow",
-  "description": "Comprehensive Rails API development workflow with specialized AI agents for models, controllers, services, tests, and devops. Optimized for Rails 8 API development with Solid Queue, authentication, and modern patterns.",
-  "version": "0.2.1",
+  "description": "Self-contained Rails API development workflow with specialized AI agents and skills. Uses Ref for token-efficient documentation access (optional: ref-tools-mcp). Includes version detection, docs search, API lookup, and pattern finding. Optimized for Rails 8 API development with Solid Queue, authentication, and modern patterns.",
+  "version": "0.3.0",
   "author": {
     "name": "Nic Barthelemy (nbarthel)"
   },
@@ -15,6 +15,19 @@
     "rails-8",
     "solid-queue",
     "rest",
-    "json"
-  ]
+    "json",
+    "self-contained",
+    "documentation",
+    "skills",
+    "ref"
+  ],
+  "optionalDependencies": {
+    "mcp": {
+      "ref-tools-mcp": {
+        "description": "Token-efficient documentation access via Ref (enhances skills performance)",
+        "url": "https://github.com/ref-tools/ref-tools-mcp",
+        "required": false
+      }
+    }
+  }
 }

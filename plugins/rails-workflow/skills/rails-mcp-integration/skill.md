@@ -6,9 +6,33 @@ manual_invoke: true
 tags: [rails, mcp, documentation, verification, research]
 priority: 3
 version: 2.0
+deprecated: true
 ---
 
 # Rails MCP Integration Skill
+
+**⚠️ DEPRECATED as of v0.3.0**
+
+This skill is deprecated in favor of the new self-contained documentation skills:
+- **@rails-version-detector** - Detects Rails version from project files
+- **@rails-docs-search** - Searches Rails Guides using WebFetch
+- **@rails-api-lookup** - Looks up API documentation
+- **@rails-pattern-finder** - Finds code patterns in codebase
+
+**Why deprecated:**
+- No external MCP server dependency required
+- Faster response (no network latency)
+- Works offline
+- Simplified plugin installation
+
+**Migration path:**
+- Replace MCP tool calls with skill invocations
+- No functional changes needed - new skills provide same capabilities
+- MCP server plugin (rails-mcp-servers) still available for advanced use
+
+---
+
+## Original Documentation (Preserved for Reference)
 
 Provides patterns for querying rails-mcp-servers plugin for authoritative documentation.
 

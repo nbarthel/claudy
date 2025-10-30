@@ -1,0 +1,9 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    rails (8.0.1
+      actioncable (= 8.0.1)
+      # Missing closing parenthesis above - malformed file
+
+PLATFORMS
+  ruby

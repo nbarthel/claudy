@@ -1,10 +1,17 @@
-# Rails Workflow Plugin v2.0
+# Rails Workflow Plugin v0.3.0
 
-A comprehensive Rails development plugin inspired by [claude-on-rails](https://github.com/obie/claude-on-rails) that orchestrates specialized AI agents to build full-stack Rails features. Unlike claude-on-rails which uses the claude-swarm gem, this plugin uses native Claude Code agent capabilities.
+A comprehensive, self-contained Rails development plugin inspired by [claude-on-rails](https://github.com/obie/claude-on-rails) that orchestrates specialized AI agents to build full-stack Rails features. Unlike claude-on-rails which uses the claude-swarm gem, this plugin uses native Claude Code agent capabilities.
 
-## Version 2.0 - Enhanced Edition ✨
+## Version 0.3.0 - Self-Contained Edition ✨
 
-**What's New:**
+**What's New in v0.3.0:**
+- 🚀 **Self-Contained Documentation** - No external MCP server dependency required
+- 📚 **4 New Documentation Skills** - Version detection, docs search, API lookup, pattern finding
+- ⚡ **Faster Response Times** - Built-in skills eliminate network latency
+- 🔌 **Simplified Installation** - Works immediately without MCP server setup
+- 📖 **Offline Capable** - Documentation skills work without internet (using WebFetch)
+
+**Previous Features (v2.0):**
 - ✨ **6 Auto-Invoking Skills** - Automatic quality enforcement (conventions, security, performance, testing)
 - 🔒 **3 Quality Gate Hooks** - Block bad code before it reaches git (pre-agent, post-agent, pre-commit)
 - 🎯 **Enhanced Architect Agent** - 7 comprehensive examples, tool mastery patterns, success criteria
@@ -15,68 +22,54 @@ A comprehensive Rails development plugin inspired by [claude-on-rails](https://g
 
 This plugin provides a team of specialized Rails agents that work together like a real development team, **with automatic quality enforcement** through skills and hooks.
 
-### Highly Recommended: Install with MCP Servers
+**Self-Contained Design** (v0.3.0): All documentation capabilities are now built-in as skills - no external MCP server required! The plugin includes:
+- Rails version detection from project files
+- Official Rails Guides search via WebFetch
+- API documentation lookup
+- Code pattern finding in your codebase
 
-**For significantly enhanced capabilities**, also install the MCP servers plugin:
+**Optional Enhancement**: The separate `rails-mcp-servers` plugin is still available for advanced use cases, but is no longer required for basic functionality.
 
-```bash
-/plugin install rails-mcp-servers@claudy
-```
+## Documentation Skills (v0.3.0) 📚
 
-**What You Get with MCP Servers:**
+**New in v0.3.0**: Self-contained skills for Rails documentation lookup - no MCP server required!
 
-🚀 **Verification Against Official Docs**
+### 4 Documentation Skills
 
-- Agents verify patterns against Rails 8 documentation before implementing
-- Ensures latest syntax and best practices
-- Reduces hallucination and outdated patterns
+| Skill | Auto-invoke | Purpose | Speed |
+|-------|------------|---------|-------|
+| **rails-version-detector** | ✅ Auto | Detects Rails version from Gemfile.lock/Gemfile | < 1s |
+| **rails-docs-search** | 🔍 On-demand | Searches Rails Guides for concepts | 2-5s |
+| **rails-api-lookup** | 🔍 On-demand | Looks up specific API signatures | 2-5s |
+| **rails-pattern-finder** | 🔍 On-demand | Finds code patterns in project | 1-3s |
 
-🎯 **Project Pattern Matching**
-
-- Agents analyze your existing code to match your style
-- Consistent naming conventions across generated code
-- Matches your validation patterns, test structure, and service patterns
-
-⚡ **Enhanced Intelligence**
-
-- Real-time access to Rails 8, Turbo, Stimulus, and Hotwire docs
-- Filesystem operations to read and understand existing code
-- Pattern detection across your codebase
-
-**Example: With vs Without MCP Servers**
-
-**Without MCP servers:**
+**How They Work:**
 
 ```
-You: "Create a Post model"
-Agent: Creates model using general Rails knowledge
+Agent needs Rails info → Auto-detects version → Fetches relevant docs → Uses correct syntax
+
+Example:
+1. Agent creating model
+2. Invokes @rails-version-detector → Rails 7.1.3
+3. Invokes @rails-api-lookup class="ActiveRecord::Base"
+4. Gets version-specific API → Uses correct syntax
 ```
 
-**With MCP servers:**
+**Key Benefits:**
+- 🚀 **No setup required** - Works immediately after plugin install
+- ⚡ **Fast** - Version detection < 1s, docs fetch 2-5s
+- 📖 **Accurate** - Fetches from official Rails docs (guides.rubyonrails.org, api.rubyonrails.org)
+- 🔌 **Smart fetching** - Uses Ref (primary) for token efficiency, WebFetch (fallback) built-in
+- 🎯 **Version-aware** - Always uses docs matching your Rails version
+- 💡 **Optional enhancement** - Install ref-tools-mcp for even better performance
 
-```
-You: "Create a Post model"
-Agent:
-1. Checks Rails 8 model patterns in official docs
-2. Reads your existing User model to match validation style
-3. Verifies association syntax against current Rails docs
-4. Creates model matching your project's exact patterns
-```
+See [Documentation Skills Guide](#documentation-skills-guide) below for detailed usage.
 
-**All agents work fully without MCP servers** - they're an enhancement, not a requirement. But with MCP servers, you get:
-
-- ✅ Rails 8 specific features (encrypts, normalizes, Solid Queue)
-- ✅ Code matching your existing patterns
-- ✅ Verified against official documentation
-- ✅ Up-to-date syntax and conventions
-
-See [rails-mcp-servers](../rails-mcp-servers/README.md) for installation details.
-
-## Auto-Invoking Skills (v2.0) ✨
+## Quality Skills (v2.0) ✨
 
 Skills automatically validate and improve code quality **without explicit invocation**. They run in the background, catching issues before they become problems.
 
-### 6 Skills Included
+### 6 Quality Skills
 
 | Skill | Auto-invoke | Purpose | Example |
 |-------|------------|---------|---------|
@@ -84,7 +77,7 @@ Skills automatically validate and improve code quality **without explicit invoca
 | **rails-security-patterns** | ✅ Always | Prevent SQL injection, validate strong parameters | Blocks string interpolation in SQL, missing params |
 | **rails-performance-patterns** | ✅ Always | Detect N+1 queries, suggest indexes | Warns about missing eager loading |
 | **rails-test-patterns** | ✅ Always | Ensure AAA pattern, enforce 80%+ coverage | Validates test structure and coverage |
-| **rails-mcp-integration** | ⚙️ Manual | Query MCP servers for documentation | Use when uncertain about APIs |
+| **rails-mcp-integration** | ⚠️ Deprecated | Replaced by documentation skills above | Use @rails-docs-search instead |
 | **agent-coordination-patterns** | ✅ Architect | Optimize multi-agent workflows | Parallel vs sequential decisions |
 
 **How They Work:**
@@ -211,8 +204,8 @@ claude
 # Install the workflow plugin
 /plugin install rails-api-workflow@claudy
 
-# Optional but recommended: Install MCP servers for enhanced capabilities
-/plugin install rails-mcp-servers@claudy
+# Optional: Install Ref MCP for token-efficient documentation (recommended)
+# See Ref setup section below for configuration instructions
 
 # Verify installation
 /help
@@ -226,6 +219,44 @@ cp -r path/to/claudy/plugins/claudy/rails-api-workflow/.claude-plugin .
 cp -r path/to/claudy/plugins/claudy/rails-api-workflow/agents .
 cp -r path/to/claudy/plugins/claudy/rails-api-workflow/commands .
 ```
+
+### Optional: Ref MCP Setup (Recommended)
+
+For token-efficient documentation fetching, install [ref-tools-mcp](https://github.com/ref-tools/ref-tools-mcp):
+
+**Why install Ref?**
+- 📉 **Reduced token usage** - More efficient context management
+- ⚡ **Faster searches** - Optimized documentation retrieval
+- 🎯 **Better results** - Smart search designed for coding agents
+
+**Setup (choose one method):**
+
+**Option 1: Using MCP Settings UI** (Easiest)
+1. Open Claude Code settings
+2. Go to MCP Servers section
+3. Add ref-tools-mcp server
+4. Follow the configuration wizard
+
+**Option 2: Manual Configuration**
+```json
+// Add to your Claude Code MCP settings
+{
+  "mcpServers": {
+    "ref": {
+      "command": "npx",
+      "args": ["-y", "@ref-tools/ref-tools-mcp"]
+    }
+  }
+}
+```
+
+**Verification:**
+```bash
+# Skills will automatically use Ref if available
+# Check logs for "Using ref_search_documentation" messages
+```
+
+**Note:** Skills work perfectly fine without Ref (using WebFetch fallback). Ref is purely an optional performance enhancement.
 
 ## Available Commands
 
