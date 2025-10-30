@@ -1,0 +1,56 @@
+# frozen_string_literal: true
+
+# <%= description %>
+class <%= class_name %>Controller < ApplicationController
+  before_action :set_<%= resource %>, only: %i[show edit update destroy]
+
+  # GET <%= route_path %>
+  def index
+    @<%= resources %> = <%= class_name %>.all
+
+    render json: @<%= resources %>
+  end
+
+  # GET <%= route_path %>/:id
+  def show
+    render json: @<%= resource %>
+  end
+
+  # POST <%= route_path %>
+  def create
+    @<%= resource %> = <%= class_name %>.new(<%= resource %>_params)
+
+    if @<%= resource %>.save
+      render json: @<%= resource %>, status: :created, location: @<%= resource %>
+    else
+      render json: @<%= resource %>.errors, status: :unprocessable_entity
+    end
+  end
+
+  # PATCH/PUT <%= route_path %>/:id
+  def update
+    if @<%= resource %>.update(<%= resource %>_params)
+      render json: @<%= resource %>
+    else
+      render json: @<%= resource %>.errors, status: :unprocessable_entity
+    end
+  end
+
+  # DELETE <%= route_path %>/:id
+  def destroy
+    @<%= resource %>.destroy
+    head :no_content
+  end
+
+  private
+
+  def set_<%= resource %>
+    @<%= resource %> = <%= class_name %>.find(params[:id])
+  rescue ActiveRecord::RecordNotFound
+    render json: { error: '<%= class_name %> not found' }, status: :not_found
+  end
+
+  def <%= resource %>_params
+    params.require(:<%= resource %>).permit(<%= permitted_params %>)
+  end
+end

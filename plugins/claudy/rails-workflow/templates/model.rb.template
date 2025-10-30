@@ -1,0 +1,75 @@
+# frozen_string_literal: true
+
+# <%= description %>
+class <%= class_name %> < ApplicationRecord
+  # == Constants ============================================================
+
+  # == Attributes ===========================================================
+
+  # == Extensions ===========================================================
+
+  # == Relationships ========================================================
+<% if associations && associations.any? %>
+  # Belongs to associations
+<% associations.select { |a| a[:type] == 'belongs_to' }.each do |assoc| %>
+  belongs_to :<%= assoc[:name] %><%= assoc[:optional] ? ', optional: true' : '' %>
+<% end %>
+
+  # Has many associations
+<% associations.select { |a| a[:type] == 'has_many' }.each do |assoc| %>
+  has_many :<%= assoc[:name] %><%= assoc[:dependent] ? ", dependent: :#{assoc[:dependent]}" : '' %>
+<% end %>
+
+  # Has one associations
+<% associations.select { |a| a[:type] == 'has_one' }.each do |assoc| %>
+  has_one :<%= assoc[:name] %><%= assoc[:dependent] ? ", dependent: :#{assoc[:dependent]}" : '' %>
+<% end %>
+<% end %>
+
+  # == Validations ==========================================================
+<% if validations && validations.any? %>
+<% validations.each do |validation| %>
+  validates :<%= validation[:attribute] %>, <%= validation[:rules] %>
+<% end %>
+<% end %>
+
+  # == Scopes ===============================================================
+<% if scopes && scopes.any? %>
+<% scopes.each do |scope| %>
+  scope :<%= scope[:name] %>, <%= scope[:lambda] %>
+<% end %>
+<% end %>
+
+  # == Callbacks ============================================================
+  # Use callbacks sparingly - prefer service objects for complex workflows
+
+  # == Class Methods ========================================================
+  class << self
+<% if class_methods && class_methods.any? %>
+<% class_methods.each do |method| %>
+    def <%= method[:name] %>(<%= method[:params] %>)
+      <%= method[:body] %>
+    end
+<% end %>
+<% end %>
+  end
+
+  # == Instance Methods =====================================================
+<% if instance_methods && instance_methods.any? %>
+<% instance_methods.each do |method| %>
+  def <%= method[:name] %>(<%= method[:params] %>)
+    <%= method[:body] %>
+  end
+<% end %>
+<% end %>
+
+  private
+
+<% if private_methods && private_methods.any? %>
+<% private_methods.each do |method| %>
+  def <%= method[:name] %>(<%= method[:params] %>)
+    <%= method[:body] %>
+  end
+<% end %>
+<% end %>
+end
