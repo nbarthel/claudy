@@ -1,0 +1,14 @@
+{
+  "name": "rails-dev-workflow",
+  "version": "0.1.0",
+  "description": "Comprehensive Rails development workflow with specialized AI agents",
+  "keywords": [
+    "rails",
+    "ruby",
+    "agents",
+    "workflow",
+    "claude-code"
+  ],
+  "author": "Claude Squad",
+  "license": "MIT"
+}

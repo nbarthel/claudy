@@ -1,0 +1,19 @@
+{
+  "name": "@claudex/react-typescript-code-review-agent",
+  "version": "0.1.0",
+  "description": "Claude Code agent plugin for React and TypeScript code review",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "test": "echo \"No tests yet\""
+  },
+  "keywords": [
+    "claude-code",
+    "react",
+    "typescript",
+    "code-review",
+    "agent"
+  ],
+  "author": "",
+  "license": "MIT"
+}

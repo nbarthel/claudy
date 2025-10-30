@@ -1,0 +1,21 @@
+{
+  "name": "rails-generators",
+  "description": "Complete workflow automation for Ruby on Rails development with model generation, controllers, Turbo Streams, service objects, RSpec setup, and API endpoints",
+  "version": "0.1.0",
+  "author": {
+    "name": "Claude Squad"
+  },
+  "keywords": [
+    "rails",
+    "ruby",
+    "workflow",
+    "automation",
+    "mvc",
+    "turbo",
+    "hotwire"
+  ],
+  "requirements": {
+    "rails": ">=7.0.0",
+    "ruby": ">=3.0.0"
+  }
+}

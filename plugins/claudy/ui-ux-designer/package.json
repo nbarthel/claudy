@@ -1,0 +1,20 @@
+{
+  "name": "@claudex/ui-ux-design-agent",
+  "version": "0.1.0",
+  "description": "Claude Code agent plugin for iterative UI/UX design and refinement",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "test": "echo \"No tests yet\""
+  },
+  "keywords": [
+    "claude-code",
+    "ui",
+    "ux",
+    "design",
+    "agent",
+    "iterative"
+  ],
+  "author": "",
+  "license": "MIT"
+}
