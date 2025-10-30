@@ -1,18 +1,18 @@
 {
   "hooks": {
-    "pre-agent-invoke": {
+    "PreToolUse": {
       "script": "./hooks/pre-agent-invoke.sh",
       "description": "Verify Rails project exists before agents run",
       "required": true,
       "timeout_ms": 5000
     },
-    "post-agent-invoke": {
+    "PostToolUse": {
       "script": "./hooks/post-agent-invoke.sh",
       "description": "Validate agent output and run tests",
       "required": false,
       "timeout_ms": 30000
     },
-    "pre-commit": {
+    "UserPromptSubmit": {
       "script": "./hooks/pre-commit.sh",
       "description": "Security and quality checks before commits",
       "required": true,
