@@ -12,11 +12,10 @@ Claudy is a comprehensive marketplace of Claude Code plugins that enhance develo
 
 **Key Features**:
 - Plugin marketplace for Claude Code
-- Rails workflow automation (generators, API patterns)
-- React/TypeScript development workflows
-- Code review agents (Rails, React)
-- UI/UX design agents
-- MCP server integrations
+- Rails workflow automation with 7 specialized agents
+- Multi-agent orchestration for Rails 8 development
+- Safety hooks for pre-agent validation and pre-commit checks
+- MCP server integrations for Rails documentation
 
 ---
 
@@ -26,13 +25,18 @@ Claudy is a comprehensive marketplace of Claude Code plugins that enhance develo
 claudy/
 ├── plugins/                    # All plugins
 │   ├── rails-workflow/        # Rails 8 workflow with 7 agents
+│   │   ├── .claude-plugin/   # Plugin manifest
+│   │   ├── agents/           # 7 specialized agents
+│   │   ├── commands/         # 5 workflow commands
+│   │   └── hooks/            # Pre-agent and pre-commit hooks
 │   └── rails-mcp-servers/     # Rails documentation MCP
+│       └── .claude-plugin/   # Plugin manifest
 ├── scripts/                    # Plugin utilities
 │   ├── install-plugin.sh
 │   ├── validate-plugin.sh
 │   └── list-plugins.sh
 ├── docs/                       # Plugin guidelines
-└── .claude/                    # Project context (this file)
+└── CLAUDE.md                   # Project context (this file)
 ```
 
 ---
@@ -85,15 +89,12 @@ plugin-name/
 ## Plugin Categories
 
 ### 1. Workflow Automation
-Plugins that automate development tasks via slash commands.
-- rails-workflow (7 agents, 5 commands)
+Plugins that automate development tasks via slash commands and specialized agents.
+- **rails-workflow**: 7 agents (architect, models, controllers, views, services, tests, devops), 5 commands (swarm, scaffold, refactor, analyze, mcp-status), 2 hooks (pre-agent-invoke, pre-commit)
 
-### 2. Code Review Agents
-AI agents for code quality and conventions.
-
-### 3. MCP Integrations
+### 2. MCP Integrations
 Model Context Protocol servers for documentation and tools.
-- rails-mcp-servers (Rails docs + filesystem)
+- **rails-mcp-servers**: Rails documentation search and filesystem access
 
 ---
 

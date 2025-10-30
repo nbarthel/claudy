@@ -10,115 +10,40 @@ Claudy provides a curated collection of Claude Code plugins that follow best pra
 
 ### Workflow Plugins
 
-#### Rails Generators (`rails-generators`)
+#### Rails Workflow (`rails-workflow`)
 
-Basic Rails generation commands for models, controllers, and common patterns.
-
-**Features:**
-
-- Model generation with validations
-- Controller scaffolding with RESTful actions
-- Turbo Stream support
-- Service object patterns
-- RSpec setup and configuration
-- API endpoint generation
-
-**Commands:** 6 slash commands
-**Installation:** `/plugin install rails-generators@claudy`
-
----
-
-#### Rails API Workflow (`rails-api-workflow`)
-
-Comprehensive Rails 8 API development with specialized AI agents for models, controllers, services, tests, and devops. Optimized for modern API patterns with Solid Queue, authentication, and REST/JSON.
+Comprehensive Rails 8 development with specialized AI agents for models, controllers, services, tests, and devops. Includes multi-agent orchestration and safety hooks.
 
 **Features:**
 
-- 7 specialized agents for Rails API components
-- 3 workflow commands (start-dev, add-feature, refactor)
-- Multi-agent coordination
-- Rails 8 API development with Solid Queue
-- JWT authentication and rate limiting support
+- 7 specialized agents (architect, models, controllers, views, services, tests, devops)
+- 5 slash commands (swarm, scaffold, refactor, analyze, mcp-status)
+- Multi-agent coordination via architect
+- Rails 8 best practices with Solid Queue, Action Cable
+- Pre-agent validation and pre-commit safety hooks
+- RSpec testing patterns
 
 **Agents:** 7 specialized agents
-**Commands:** 3 workflow commands
-**Installation:** `/plugin install rails-api-workflow@claudy`
+**Commands:** 5 workflow commands
+**Hooks:** 2 safety hooks
+**Installation:** `./scripts/install-plugin.sh rails-workflow /path/to/rails/project`
 
 ---
 
-#### React TypeScript Workflow (`react-typescript-workflow`)
+### MCP Integrations
 
-Modern React and TypeScript development workflows.
+#### Rails MCP Servers (`rails-mcp-servers`)
 
-**Features:**
-
-- Component generation with TypeScript
-- Custom hooks creation
-- Context/state management setup
-- React Testing Library configuration
-- Form handling with React Hook Form + Zod
-- Data fetching with React Query
-
-**Commands:** 6 slash commands
-**Installation:** `./scripts/install-plugin.sh react-typescript-workflow /path/to/react/project`
-
----
-
-### Code Review Agents
-
-#### Rails Code Reviewer (`rails-code-reviewer`)
-
-Specialized agent for reviewing Rails code with expertise in conventions and best practices.
+Model Context Protocol servers providing Rails documentation and filesystem access.
 
 **Features:**
 
-- Rails convention enforcement
-- Model validation review
-- Controller best practices
-- Security vulnerability detection
-- N+1 query identification
-- Performance optimization suggestions
+- Rails documentation search and retrieval
+- Rails API reference access
+- Filesystem operations for Rails projects
+- Integration with Claude Code MCP support
 
-**Agents:** 1 specialized agent
-**Installation:** `/plugin install rails-code-reviewer@claudy`
-
----
-
-#### React TypeScript Reviewer (`react-typescript-reviewer`)
-
-Expert code review for React and TypeScript applications.
-
-**Features:**
-
-- Modern React pattern enforcement
-- TypeScript strict type checking
-- Hook usage validation
-- Performance optimization
-- Accessibility compliance
-- Testing best practices
-
-**Agents:** 1 specialized agent
-**Installation:** `/plugin install react-typescript-reviewer@claudy`
-
----
-
-### Design Agents
-
-#### UI/UX Designer (`ui-ux-designer`)
-
-Iterative UI/UX design and refinement specialist.
-
-**Features:**
-
-- Component layout design
-- Responsive design implementation
-- Accessibility compliance
-- Visual hierarchy optimization
-- Iterative feedback loops
-- Design system adherence
-
-**Agents:** 1 specialized agent
-**Installation:** `/plugin install ui-ux-designer@claudy`
+**Installation:** `./scripts/install-plugin.sh rails-mcp-servers /path/to/project`
 
 ---
 
@@ -141,14 +66,15 @@ cd claudy
 ./scripts/list-plugins.sh
 ```
 
-4. Install plugins via Claude Code:
+4. Install plugins to your project:
 
 ```bash
-# In Claude Code, run:
-/plugin
+# Install a plugin to your project
+./scripts/install-plugin.sh rails-workflow /path/to/your/rails/project
 
-# Or install directly:
-/plugin install rails-generators@claudy
+# Or install from within the target project
+cd /path/to/your/rails/project
+/path/to/claudy/scripts/install-plugin.sh rails-workflow .
 ```
 
 ### Marketplace Setup
@@ -159,18 +85,18 @@ To use the Claudy plugin marketplace with Claude Code:
 2. The marketplace configuration is in `.claude-plugin/marketplace.json`
 3. Once configured, you can browse and install plugins using `/plugin`
 
-### Example: Installing Rails Generators Plugin
+### Example: Installing Rails Workflow Plugin
 
 ```bash
-# In your Rails project, open Claude Code
+# In your Rails project, install the plugin
 cd ~/projects/my-rails-app
-claude
+/path/to/claudy/scripts/install-plugin.sh rails-workflow .
 
-# Install the Rails generators plugin
-/plugin install rails-generators@claudy
+# Use the commands in Claude Code
+/rails-swarm Build a complete User authentication system
 
-# Use the commands
-/rails-generate-model User name:string email:string
+# Or use specialized agents
+@rails-architect Design the authentication architecture
 ```
 
 ## Plugin Structure
@@ -272,31 +198,15 @@ See [docs/best-practices/PLUGIN_GUIDELINES.md](docs/best-practices/PLUGIN_GUIDEL
 
 ### 1. Workflow Automation
 
-Plugins that automate common development tasks through slash commands.
+Plugins that automate common development tasks through slash commands and specialized agents.
 
-**Examples:** rails-generators, rails-api-workflow, react-typescript-workflow
+**Available:** rails-workflow
 
-### 2. Code Review Agents
+### 2. MCP Integrations
 
-Specialized AI agents that review code for quality, conventions, and best practices.
+Model Context Protocol servers for documentation and tool access.
 
-**Examples:** rails-code-reviewer, react-typescript-reviewer
-
-### 3. Framework Integrations
-
-Framework-specific tools and conventions.
-
-**Examples:** Rails plugins, React plugins
-
-### 4. Design & UX
-
-Plugins focused on UI/UX design and iterative refinement.
-
-**Examples:** ui-ux-designer
-
-### 5. Developer Utilities
-
-General-purpose development tools and helpers.
+**Available:** rails-mcp-servers
 
 ## Best Practices
 
@@ -332,34 +242,24 @@ We welcome contributions! To contribute:
 ## Requirements
 
 - Claude Code CLI
-- Node.js 18+ (for monorepo tooling)
 - Git
 - Bash (for utility scripts)
+- jq (for JSON validation in scripts)
 
 ## Project Structure
 
 ```
 claudy/
 ├── plugins/                    # All plugins
-│   └── claudy/            # Namespace
-│       ├── rails-generators/
-│       ├── rails-api-workflow/
-│       ├── react-typescript-workflow/
-│       ├── rails-code-reviewer/
-│       ├── react-typescript-reviewer/
-│       ├── ui-ux-designer/
-│       └── rails-mcp-servers/
-├── shared/                     # Shared utilities
-│   ├── types/                  # TypeScript types
-│   └── utils/                  # Helper functions
+│   ├── rails-workflow/        # Rails 8 workflow with 7 agents
+│   └── rails-mcp-servers/     # Rails documentation MCP
 ├── docs/                       # Documentation
 │   └── best-practices/         # Plugin guidelines
 ├── scripts/                    # Utility scripts
 │   ├── install-plugin.sh
 │   ├── validate-plugin.sh
 │   └── list-plugins.sh
-├── package.json                # Monorepo configuration
-├── tsconfig.json               # TypeScript config
+├── CLAUDE.md                   # Project context
 └── README.md                   # This file
 ```
 
@@ -406,15 +306,10 @@ See individual plugin READMEs for plugin-specific changes.
 
 ### v0.1.0 (Initial Release)
 
-- Rails Generators plugin with 6 commands
-- Rails Advanced Workflow with 7 agents and 3 commands
-- React TypeScript Workflow plugin with 6 commands
-- Rails Code Reviewer agent
-- React TypeScript Reviewer agent
-- UI/UX Designer agent
-- Rails MCP Servers for documentation and filesystem
-- Utility scripts for plugin management
-- Comprehensive documentation
+- Rails Workflow plugin with 7 agents, 5 commands, and 2 safety hooks
+- Rails MCP Servers for documentation and filesystem access
+- Utility scripts for plugin management (install, validate, list)
+- Comprehensive documentation and examples
 
 ## Acknowledgments
 
