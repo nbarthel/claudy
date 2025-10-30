@@ -1,0 +1,54 @@
+{
+  "name": "filesystem",
+  "description": "Enhanced filesystem operations scoped to Rails project structure",
+  "command": "npx",
+  "args": [
+    "-y",
+    "@modelcontextprotocol/server-filesystem",
+    "{PROJECT_ROOT}"
+  ],
+  "env": {
+    "ALLOWED_DIRECTORIES": "app,config,db,lib,spec,test"
+  },
+  "capabilities": {
+    "resources": [
+      "file-tree",
+      "directory-listing",
+      "file-search"
+    ],
+    "tools": [
+      "read_file",
+      "write_file",
+      "list_directory",
+      "search_files",
+      "get_file_info"
+    ]
+  },
+  "metadata": {
+    "purpose": "Provides filesystem access scoped to Rails project directories for safe file operations",
+    "documentation": "https://github.com/modelcontextprotocol/servers/tree/main/src/filesystem",
+    "security": {
+      "scope": "Rails project directory only",
+      "allowed_operations": [
+        "read",
+        "write",
+        "search",
+        "list"
+      ],
+      "restricted_paths": [
+        "node_modules",
+        "tmp",
+        "log",
+        ".git"
+      ]
+    },
+    "rails_directories": {
+      "app": "Application code (models, controllers, views, etc.)",
+      "config": "Configuration files",
+      "db": "Database schemas and migrations",
+      "lib": "Library code and custom modules",
+      "spec": "RSpec tests",
+      "test": "Minitest tests"
+    }
+  }
+}

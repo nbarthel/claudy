@@ -1,0 +1,22 @@
+{
+  "name": "@claudex/rails-workflow",
+  "version": "0.1.0",
+  "description": "Claude Code plugin for Ruby on Rails development workflows",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "test": "echo \"No tests yet\""
+  },
+  "keywords": [
+    "claude-code",
+    "rails",
+    "ruby",
+    "workflow",
+    "automation"
+  ],
+  "author": "",
+  "license": "MIT",
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  }
+}

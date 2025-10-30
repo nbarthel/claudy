@@ -1,0 +1,19 @@
+{
+  "name": "@claudex/rails-code-review-agent",
+  "version": "0.1.0",
+  "description": "Claude Code agent plugin for Rails code review and best practices enforcement",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "test": "echo \"No tests yet\""
+  },
+  "keywords": [
+    "claude-code",
+    "rails",
+    "code-review",
+    "agent",
+    "quality"
+  ],
+  "author": "",
+  "license": "MIT"
+}
