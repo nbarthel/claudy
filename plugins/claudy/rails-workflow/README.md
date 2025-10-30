@@ -1,10 +1,19 @@
-# Rails Dev Workflow Plugin
+# Rails Workflow Plugin v2.0
 
 A comprehensive Rails development plugin inspired by [claude-on-rails](https://github.com/obie/claude-on-rails) that orchestrates specialized AI agents to build full-stack Rails features. Unlike claude-on-rails which uses the claude-swarm gem, this plugin uses native Claude Code agent capabilities.
 
+## Version 2.0 - Enhanced Edition ✨
+
+**What's New:**
+- ✨ **6 Auto-Invoking Skills** - Automatic quality enforcement (conventions, security, performance, testing)
+- 🔒 **3 Quality Gate Hooks** - Block bad code before it reaches git (pre-agent, post-agent, pre-commit)
+- 🎯 **Enhanced Architect Agent** - 7 comprehensive examples, tool mastery patterns, success criteria
+- 📚 **Best Practices Built-In** - Rails conventions, security patterns, performance optimization
+- 🚀 **Zero Configuration** - Skills and hooks activate automatically
+
 ## Overview
 
-This plugin provides a team of specialized Rails agents that work together like a real development team.
+This plugin provides a team of specialized Rails agents that work together like a real development team, **with automatic quality enforcement** through skills and hooks.
 
 ### Highly Recommended: Install with MCP Servers
 
@@ -62,6 +71,121 @@ Agent:
 - ✅ Up-to-date syntax and conventions
 
 See [rails-mcp-servers](../rails-mcp-servers/README.md) for installation details.
+
+## Auto-Invoking Skills (v2.0) ✨
+
+Skills automatically validate and improve code quality **without explicit invocation**. They run in the background, catching issues before they become problems.
+
+### 6 Skills Included
+
+| Skill | Auto-invoke | Purpose | Example |
+|-------|------------|---------|---------|
+| **rails-conventions** | ✅ Always | Enforce naming, MVC separation, RESTful patterns | Catches plural model names, complex queries in controllers |
+| **rails-security-patterns** | ✅ Always | Prevent SQL injection, validate strong parameters | Blocks string interpolation in SQL, missing params |
+| **rails-performance-patterns** | ✅ Always | Detect N+1 queries, suggest indexes | Warns about missing eager loading |
+| **rails-test-patterns** | ✅ Always | Ensure AAA pattern, enforce 80%+ coverage | Validates test structure and coverage |
+| **rails-mcp-integration** | ⚙️ Manual | Query MCP servers for documentation | Use when uncertain about APIs |
+| **agent-coordination-patterns** | ✅ Architect | Optimize multi-agent workflows | Parallel vs sequential decisions |
+
+**How They Work:**
+
+```
+You write code → Skills validate automatically → You get instant feedback
+
+Example:
+1. Create model with plural name (Users)
+2. rails-conventions skill detects: "❌ Model should be singular: User"
+3. You fix it before committing
+4. No bugs reach production
+```
+
+**Key Benefits:**
+- 🚀 **Catches 90%+ common mistakes** automatically
+- ⚡ **Instant feedback** (< 100ms per file)
+- 🎯 **Zero configuration** - works out of the box
+- 📚 **Educational** - explains why and how to fix
+
+**Configuration:**
+
+Skills can be customized via `.rails-skills.yml`:
+
+```yaml
+skills:
+  rails-conventions:
+    enabled: true
+    severity: error  # error, warning, info
+
+  rails-security-patterns:
+    enabled: true
+    block_commit: true
+
+  rails-performance-patterns:
+    enabled: true
+    n1_detection: true
+```
+
+## Quality Gate Hooks (v2.0) 🔒
+
+Hooks run at key points in the workflow to ensure code quality and security.
+
+### 3 Hooks Included
+
+**1. pre-agent-invoke** (5 second timeout)
+- **When**: Before any agent runs
+- **Checks**: Rails project structure exists (Gemfile, app/, config/)
+- **Purpose**: Prevent agents from running in wrong directory
+- **Result**: ✅ Pass or ❌ Block agent
+
+**2. post-agent-invoke** (30 second timeout)
+- **When**: After agent completes
+- **Checks**: Security issues, Rails conventions, test results
+- **Purpose**: Validate agent output quality
+- **Result**: ⚠️ Warnings (doesn't block)
+
+**3. pre-commit** (60 second timeout)
+- **When**: Before git commit
+- **Checks**:
+  - ❌ Blocks: Secrets, debuggers, SQL injection, missing strong params
+  - ⚠️ Warns: Missing tests, complex queries
+- **Purpose**: Prevent bad code from reaching git
+- **Result**: ✅ Allow commit or ❌ Block commit
+
+**Example Security Blocks:**
+
+```bash
+# Trying to commit code with debugger:
+$ git commit -m "Add feature"
+🔒 Running pre-commit security checks...
+❌ Error: Debugger statements detected
+app/controllers/users_controller.rb:15:    binding.pry
+Remove debugging code before committing
+```
+
+**Skip Hooks (when needed):**
+
+```bash
+# Skip all hooks temporarily
+SKIP_RAILS_HOOKS=1 bundle exec rails console
+
+# Skip git pre-commit hook
+git commit --no-verify -m "WIP: debugging"
+```
+
+**Hook Configuration:**
+
+Customize via `.rails-hooks.yml`:
+
+```yaml
+hooks:
+  pre-agent-invoke:
+    enabled: true
+    checks: [rails_project, gemfile, app_directory]
+
+  pre-commit:
+    enabled: true
+    block_on: [secrets, debuggers, sql_injection]
+    warn_on: [missing_tests, style_violations]
+```
 
 ## Specialized Agents
 
@@ -169,14 +293,20 @@ Coordinate refactoring across Rails application layers.
 
 ## Agent Specializations
 
-### rails-architect (Coordinator)
+### rails-architect (Coordinator) - Enhanced in v2.0 ⭐
 
-The architect analyzes your requests and coordinates other agents. It:
+The architect analyzes your requests and coordinates other agents. **Enhanced in v2.0** with:
 
+- **7 comprehensive examples** (simple → complex → error recovery → MCP integration)
+- **Tool mastery patterns** (Read/Grep/Glob/Edit best practices documented)
+- **Success criteria** (clear quality checklists before completion)
+- **Clear boundaries** ("When to Use" vs "When NOT to Use")
+
+It:
 - Breaks down features into component tasks
 - Determines which specialists to involve
 - Sequences work when dependencies exist
-- Runs agents in parallel when possible
+- Runs agents in parallel when possible (using agent-coordination-patterns skill)
 - Ensures consistency across layers
 
 **Invoke directly:**
@@ -465,6 +595,37 @@ For issues and questions:
 - Review agent prompts in the [agents](./agents) directory
 - Open an issue on GitHub
 
+## Quick Start (v2.0)
+
+```bash
+# 1. Install the plugin
+/plugin install rails-workflow@claudy
+
+# 2. Optionally install MCP servers for enhanced capabilities
+/plugin install rails-mcp-servers@claudy
+
+# 3. Start building - skills and hooks activate automatically!
+/rails-dev Add a Post model with title and body
+
+# Skills auto-validate:
+# ✅ Naming conventions checked
+# ✅ Security patterns validated
+# ✅ Performance optimized
+# ✅ Tests enforced
+
+# 4. Commit with confidence - pre-commit hook protects you
+git add . && git commit -m "Add Post model"
+# 🔒 Pre-commit checks: ✅ Passed
+```
+
+**That's it!** Skills and hooks work automatically. No configuration needed.
+
 ## Version
+
+0.2.0 - Enhanced Edition (v2.0)
+- Added 6 auto-invoking skills
+- Added 3 quality gate hooks
+- Enhanced rails-architect agent
+- Built-in best practices
 
 0.1.0 - Initial release

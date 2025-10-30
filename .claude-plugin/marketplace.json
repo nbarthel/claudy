@@ -78,18 +78,18 @@
       "keywords": ["ui", "ux", "design", "designer", "accessibility", "responsive", "iterative"]
     },
     {
-      "name": "rails-api-workflow",
-      "source": "./plugins/claudy/rails-api-workflow",
-      "description": "Comprehensive Rails API development workflow with specialized AI agents for models, controllers, services, tests, and devops. Optimized for Rails 8 API development with Solid Queue, authentication, and modern patterns.",
-      "version": "0.1.0",
+      "name": "rails-workflow",
+      "source": "./plugins/claudy/rails-workflow",
+      "description": "Enhanced Rails development workflow (v2.0) with 7 specialized AI agents, 6 auto-invoking skills for quality enforcement, and 3 security hooks. Features automatic validation of conventions, security, performance, and testing. Optimized for Rails 8 with Solid Queue and modern patterns.",
+      "version": "0.2.0",
       "author": {
-        "name": "Claude Squad"
+        "name": "Nic Barthelemy (nbarthel)"
       },
-      "homepage": "https://github.com/claude-squad/claudy/tree/main/plugins/claudy/rails-api-workflow",
+      "homepage": "https://github.com/claude-squad/claudy/tree/main/plugins/claudy/rails-workflow",
       "repository": "https://github.com/claude-squad/claudy.git",
       "license": "MIT",
       "category": "workflow",
-      "keywords": ["rails", "ruby", "api", "workflow", "agents", "multi-agent", "rails-8", "solid-queue", "rest", "json"]
+      "keywords": ["rails", "ruby", "api", "workflow", "agents", "multi-agent", "rails-8", "solid-queue", "rest", "json", "skills", "hooks", "security", "performance", "quality-gates", "auto-validation"]
     },
     {
       "name": "rails-mcp-servers",
