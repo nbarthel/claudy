@@ -1,10 +1,10 @@
-# Claude Hub - Claude Code Plugin Marketplace
+# Claudy - Claude Code Plugin Marketplace
 
 A comprehensive marketplace of Claude Code plugins for software development workflows. This monorepo contains high-quality plugins for Rails, React/TypeScript, code review, UI/UX design, and more.
 
 ## Overview
 
-Claude Hub provides a curated collection of Claude Code plugins that follow best practices and enhance developer productivity. Each plugin is designed to work seamlessly with Claude Code CLI and can be easily installed into your projects.
+Claudy provides a curated collection of Claude Code plugins that follow best practices and enhance developer productivity. Each plugin is designed to work seamlessly with Claude Code CLI and can be easily installed into your projects.
 
 ## Available Plugins
 
@@ -24,7 +24,7 @@ Basic Rails generation commands for models, controllers, and common patterns.
 - API endpoint generation
 
 **Commands:** 6 slash commands
-**Installation:** `/plugin install rails-generators@claude-hub`
+**Installation:** `/plugin install rails-generators@claudy`
 
 ---
 
@@ -42,7 +42,7 @@ Comprehensive Rails 8 API development with specialized AI agents for models, con
 
 **Agents:** 7 specialized agents
 **Commands:** 3 workflow commands
-**Installation:** `/plugin install rails-api-workflow@claude-hub`
+**Installation:** `/plugin install rails-api-workflow@claudy`
 
 ---
 
@@ -80,7 +80,7 @@ Specialized agent for reviewing Rails code with expertise in conventions and bes
 - Performance optimization suggestions
 
 **Agents:** 1 specialized agent
-**Installation:** `/plugin install rails-code-reviewer@claude-hub`
+**Installation:** `/plugin install rails-code-reviewer@claudy`
 
 ---
 
@@ -98,7 +98,7 @@ Expert code review for React and TypeScript applications.
 - Testing best practices
 
 **Agents:** 1 specialized agent
-**Installation:** `/plugin install react-typescript-reviewer@claude-hub`
+**Installation:** `/plugin install react-typescript-reviewer@claudy`
 
 ---
 
@@ -118,7 +118,7 @@ Iterative UI/UX design and refinement specialist.
 - Design system adherence
 
 **Agents:** 1 specialized agent
-**Installation:** `/plugin install ui-ux-designer@claude-hub`
+**Installation:** `/plugin install ui-ux-designer@claudy`
 
 ---
 
@@ -129,11 +129,11 @@ Iterative UI/UX design and refinement specialist.
 1. Clone this repository:
 
 ```bash
-git clone https://github.com/yourusername/claude-hub.git
-cd claude-hub
+git clone https://github.com/yourusername/claudy.git
+cd claudy
 ```
 
-2. Configure the Claude Hub marketplace in Claude Code (see Marketplace Setup below)
+2. Configure the Claudy marketplace in Claude Code (see Marketplace Setup below)
 
 3. List available plugins:
 
@@ -148,14 +148,14 @@ cd claude-hub
 /plugin
 
 # Or install directly:
-/plugin install rails-generators@claude-hub
+/plugin install rails-generators@claudy
 ```
 
 ### Marketplace Setup
 
-To use the Claude Hub plugin marketplace with Claude Code:
+To use the Claudy plugin marketplace with Claude Code:
 
-1. In Claude Code, configure the Claude Hub marketplace by pointing to this repository
+1. In Claude Code, configure the Claudy marketplace by pointing to this repository
 2. The marketplace configuration is in `.claude-plugin/marketplace.json`
 3. Once configured, you can browse and install plugins using `/plugin`
 
@@ -167,7 +167,7 @@ cd ~/projects/my-rails-app
 claude
 
 # Install the Rails generators plugin
-/plugin install rails-generators@claude-hub
+/plugin install rails-generators@claudy
 
 # Use the commands
 /rails-generate-model User name:string email:string
@@ -221,7 +221,7 @@ mkdir -p plugins/my-plugin/.claude/{commands,agents}
 
 ```json
 {
-  "name": "@claude-hub/my-plugin",
+  "name": "@claudy/my-plugin",
   "version": "0.1.0",
   "description": "My awesome plugin",
   "keywords": ["claude-code", "plugin"]
@@ -339,9 +339,9 @@ We welcome contributions! To contribute:
 ## Project Structure
 
 ```
-claude-hub/
+claudy/
 ├── plugins/                    # All plugins
-│   └── claude-hub/            # Namespace
+│   └── claudy/            # Namespace
 │       ├── rails-generators/
 │       ├── rails-api-workflow/
 │       ├── react-typescript-workflow/
@@ -385,8 +385,8 @@ Future plugins planned:
 
 ### Getting Help
 
-- GitHub Issues: [Report an issue](https://github.com/yourusername/claude-hub/issues)
-- Discussions: [Community discussions](https://github.com/yourusername/claude-hub/discussions)
+- GitHub Issues: [Report an issue](https://github.com/yourusername/claudy/issues)
+- Discussions: [Community discussions](https://github.com/yourusername/claudy/discussions)
 
 ## License
 
@@ -427,6 +427,6 @@ Thanks to:
 
 ---
 
-**Start building better software with Claude Hub plugins!**
+**Start building better software with Claudy plugins!**
 
 Get started: `./scripts/list-plugins.sh`

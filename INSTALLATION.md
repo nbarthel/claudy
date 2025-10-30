@@ -1,11 +1,11 @@
-# Installing Claude Hub Plugins
+# Installing Claudy Plugins
 
-This guide explains how to install and use Claude Hub plugins with Claude Code.
+This guide explains how to install and use Claudy plugins with Claude Code.
 
 ## Prerequisites
 
 - Claude Code CLI installed
-- Access to the Claude Hub marketplace repository
+- Access to the Claudy marketplace repository
 
 ## Installation Methods
 
@@ -24,7 +24,7 @@ claude
 /plugin
 ```
 
-3. Browse available Claude Hub plugins and select ones to install
+3. Browse available Claudy plugins and select ones to install
 
 ### Method 2: Direct Installation
 
@@ -32,29 +32,29 @@ Install a specific plugin directly:
 
 ```bash
 # Install Rails workflow plugin
-/plugin install rails-workflow@claude-hub
+/plugin install rails-workflow@claudy
 
 # Install React TypeScript workflow plugin
-/plugin install react-typescript-workflow@claude-hub
+/plugin install react-typescript-workflow@claudy
 
 # Install code review agents
-/plugin install rails-code-review-agent@claude-hub
-/plugin install react-typescript-code-review-agent@claude-hub
+/plugin install rails-code-review-agent@claudy
+/plugin install react-typescript-code-review-agent@claudy
 
 # Install UI/UX design agent
-/plugin install ui-ux-design-agent@claude-hub
+/plugin install ui-ux-design-agent@claudy
 ```
 
 ## Marketplace Setup
 
-Before you can install Claude Hub plugins, you need to configure the marketplace:
+Before you can install Claudy plugins, you need to configure the marketplace:
 
 ### Option 1: Via Git Repository
 
-1. Clone the Claude Hub repository:
+1. Clone the Claudy repository:
 
 ```bash
-git clone https://github.com/yourusername/claude-hub.git
+git clone https://github.com/yourusername/claudy.git
 ```
 
 2. Configure Claude Code to use the local marketplace:
@@ -84,16 +84,16 @@ Configure Claude Code to use the remote marketplace directly:
 
 ```bash
 # Disable a plugin temporarily
-/plugin disable rails-workflow@claude-hub
+/plugin disable rails-workflow@claudy
 
 # Re-enable a plugin
-/plugin enable rails-workflow@claude-hub
+/plugin enable rails-workflow@claudy
 ```
 
 ### Uninstall Plugins
 
 ```bash
-/plugin uninstall rails-workflow@claude-hub
+/plugin uninstall rails-workflow@claudy
 ```
 
 ## Using Installed Plugins
@@ -171,7 +171,7 @@ If you get "plugin not found" error:
 
 1. Verify marketplace is configured correctly
 2. Check plugin name spelling
-3. Ensure you're using the correct marketplace name (@claude-hub)
+3. Ensure you're using the correct marketplace name (@claudy)
 
 ### Commands Not Appearing
 
@@ -196,13 +196,13 @@ To update to the latest version:
 1. Uninstall the old version:
 
 ```bash
-/plugin uninstall plugin-name@claude-hub
+/plugin uninstall plugin-name@claudy
 ```
 
 2. Install the new version:
 
 ```bash
-/plugin install plugin-name@claude-hub
+/plugin install plugin-name@claudy
 ```
 
 ## Multiple Projects
@@ -234,4 +234,4 @@ Plugins are installed per-project. To use the same plugins across projects:
 
 ---
 
-Happy coding with Claude Hub plugins!
+Happy coding with Claudy plugins!

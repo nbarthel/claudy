@@ -1,8 +1,8 @@
-# Troubleshooting Guide - Claude Hub Marketplace
+# Troubleshooting Guide - Claudy Marketplace
 
 ## Issue: Only 2 Plugins Showing in Marketplace
 
-If you're only seeing 2 out of 7 plugins when browsing the Claude Hub marketplace, try these troubleshooting steps:
+If you're only seeing 2 out of 7 plugins when browsing the Claudy marketplace, try these troubleshooting steps:
 
 ### 1. Clear Claude Code Cache
 
@@ -27,7 +27,7 @@ Ensure your Claude Code settings are pointing to the correct marketplace locatio
 
 **Expected marketplace configuration:**
 
-- Repository URL: Your Claude Hub repository URL
+- Repository URL: Your Claudy repository URL
 - Marketplace file: `.claude-plugin/marketplace.json`
 
 ### 3. Verify Marketplace File
@@ -39,12 +39,12 @@ Check that the marketplace.json file is complete:
 ./scripts/verify-marketplace.sh
 
 # Should show all 7 plugins:
-# - rails-workflow
+# - rails-generators
 # - react-typescript-workflow
-# - rails-code-review-agent
-# - react-typescript-code-review-agent
-# - ui-ux-design-agent
-# - rails-dev-workflow
+# - rails-code-reviewer
+# - react-typescript-reviewer
+# - ui-ux-designer
+# - rails-api-workflow
 # - rails-mcp-servers
 ```
 
@@ -104,7 +104,7 @@ If the marketplace is still not showing all plugins, you can install them manual
 cd your-project
 
 # Install a specific plugin manually
-cp -r /path/to/claude-hub/plugins/claude-hub/rails-workflow .claude/
+cp -r /path/to/claudy/plugins/claudy/rails-generators .claude/
 ```
 
 ## Common Issues
@@ -116,7 +116,7 @@ cp -r /path/to/claude-hub/plugins/claude-hub/rails-workflow .claude/
 **Solution:** The source paths should be:
 
 ```json
-"source": "./plugins/claude-hub/plugin-name"
+"source": "./plugins/claudy/plugin-name"
 ```
 
 ### Issue: Plugins appear but can't be installed
@@ -127,7 +127,7 @@ cp -r /path/to/claude-hub/plugins/claude-hub/rails-workflow .claude/
 
 ```bash
 # Validate all plugin.json files
-for plugin in plugins/claude-hub/*/; do
+for plugin in plugins/claudy/*/; do
   echo "Checking $(basename $plugin)..."
   python3 -c "import json; json.load(open('$plugin/.claude-plugin/plugin.json'))" && echo "  ✓ Valid"
 done
@@ -144,11 +144,11 @@ done
 Before reporting an issue, verify:
 
 - [ ] All 7 plugins are listed in `.claude-plugin/marketplace.json`
-- [ ] All plugin paths exist: `./plugins/claude-hub/*/`
+- [ ] All plugin paths exist: `./plugins/claudy/*/`
 - [ ] All plugins have `.claude-plugin/plugin.json` manifests
 - [ ] Marketplace.json is valid JSON
 - [ ] Claude Code is restarted after marketplace changes
-- [ ] You're using the latest version of Claude Hub
+- [ ] You're using the latest version of Claudy
 - [ ] Your Claude Code version supports marketplaces
 
 ## Getting Help
@@ -170,16 +170,16 @@ After following these steps, you should see all 7 plugins:
 
 **Workflow Plugins (3):**
 
-1. rails-workflow (6 commands)
+1. rails-generators (6 commands)
 2. react-typescript-workflow (6 commands)
-3. rails-dev-workflow (3 commands + 7 agents)
+3. rails-api-workflow (3 commands + 7 agents)
 
 **Code Review Agents (2):**
-4. rails-code-review-agent (1 agent)
-5. react-typescript-code-review-agent (1 agent)
+4. rails-code-reviewer (1 agent)
+5. react-typescript-reviewer (1 agent)
 
 **Design Agents (1):**
-6. ui-ux-design-agent (1 agent)
+6. ui-ux-designer (1 agent)
 
 **Tools & Integrations (1):**
 7. rails-mcp-servers (MCP servers)
@@ -194,7 +194,7 @@ After following these steps, you should see all 7 plugins:
    - All plugins now have consistent metadata
 
 2. **Updated Verification Script** to:
-   - Handle namespace structure (`plugins/claude-hub/*/`)
+   - Handle namespace structure (`plugins/claudy/*/`)
    - Check MCP server configurations
    - Read plugin list from marketplace.json
    - Show correct plugin count (7)
@@ -207,9 +207,9 @@ After following these steps, you should see all 7 plugins:
 
 ### Categories Defined
 
-- **workflow**: rails-workflow, react-typescript-workflow, rails-dev-workflow
-- **code-review**: rails-code-review-agent, react-typescript-code-review-agent
-- **design**: ui-ux-design-agent
+- **workflow**: rails-generators, react-typescript-workflow, rails-api-workflow
+- **code-review**: rails-code-reviewer, react-typescript-reviewer
+- **design**: ui-ux-designer
 - **tools**: rails-mcp-servers
 
 ---

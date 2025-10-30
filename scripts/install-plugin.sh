@@ -15,7 +15,7 @@ if [ -z "$PLUGIN_NAME" ]; then
   echo ""
   echo "Installation methods:"
   echo "  1. Interactive: /plugin"
-  echo "  2. Direct: /plugin install $PLUGIN_NAME@claude-hub"
+  echo "  2. Direct: /plugin install $PLUGIN_NAME@claudy"
   exit 1
 fi
 
@@ -66,7 +66,7 @@ fi
 echo ""
 echo "To install this plugin:"
 echo "  1. In Claude Code, run: /plugin"
-echo "  2. Or run: /plugin install $PLUGIN_NAME@claude-hub"
+echo "  2. Or run: /plugin install $PLUGIN_NAME@claudy"
 echo ""
-echo "The Claude Hub marketplace needs to be configured in Claude Code first."
+echo "The Claudy marketplace needs to be configured in Claude Code first."
 echo "See README.md for marketplace setup instructions."

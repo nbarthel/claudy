@@ -1,40 +1,8 @@
-# Dependencies
-node_modules/
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-
-# Build outputs
-dist/
-build/
-*.js
-*.js.map
-*.d.ts
-*.d.ts.map
-
-# IDE
-.vscode/
-.idea/
-*.swp
-*.swo
-*~
-
-# OS
-.DS_Store
-Thumbs.db
-
-# Environment
-.env
-.env.local
-.env.*.local
-
-# Logs
-logs/
-*.log
-
-# Internal development documentation
-.dev/
-
-# Keep example configs
-!plugins/**/examples/**/*.js
-!plugins/**/templates/**/*.js
+# Always ignore sensitive files even in tracked directories
+**/*.key
+**/*.pem
+**/secrets.*
+**/credentials.*
+**/*_private.*
+**/*_secret.*
+.claude

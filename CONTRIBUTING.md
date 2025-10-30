@@ -1,6 +1,6 @@
-# Contributing to Claude Hub
+# Contributing to Claudy
 
-Thank you for your interest in contributing to Claude Hub! This document provides guidelines and instructions for contributing to the plugin marketplace.
+Thank you for your interest in contributing to Claudy! This document provides guidelines and instructions for contributing to the plugin marketplace.
 
 ## How to Contribute
 
@@ -27,8 +27,8 @@ There are several ways to contribute:
 1. Fork and clone the repository:
 
 ```bash
-git clone https://github.com/yourusername/claude-hub.git
-cd claude-hub
+git clone https://github.com/yourusername/claudy.git
+cd claudy
 ```
 
 2. Install dependencies:
@@ -66,7 +66,7 @@ mkdir -p plugins/my-plugin/examples
 ```bash
 cat > plugins/my-plugin/package.json << 'EOF'
 {
-  "name": "@claude-hub/my-plugin",
+  "name": "@claudy/my-plugin",
   "version": "0.1.0",
   "description": "Brief description of your plugin",
   "keywords": ["claude-code", "plugin", "your-framework"],
@@ -402,4 +402,4 @@ Don't hesitate to ask:
 - Comment on existing issues
 - Reach out to maintainers
 
-Thank you for contributing to Claude Hub!
+Thank you for contributing to Claudy!

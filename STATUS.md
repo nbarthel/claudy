@@ -1,4 +1,4 @@
-# Claude Hub Plugin Marketplace - Status Report
+# Claudy Plugin Marketplace - Status Report
 
 **Status:** ✅ **READY FOR USE**
 
@@ -7,7 +7,7 @@
 
 ## Summary
 
-The Claude Hub Plugin Marketplace is now fully configured and compatible with the official Claude Code plugin installer system. All 7 plugins have been restructured to follow the proper plugin format with complete metadata.
+The Claudy Plugin Marketplace is now fully configured and compatible with the official Claude Code plugin installer system. All 7 plugins have been restructured to follow the proper plugin format with complete metadata.
 
 ## ✅ Completed Tasks
 
@@ -54,7 +54,7 @@ The Claude Hub Plugin Marketplace is now fully configured and compatible with th
 ## 📊 Verification Results
 
 ```
-Claude Hub Marketplace Verification
+Claudy Marketplace Verification
 ==================================
 
 ✓ Marketplace manifest exists
@@ -160,8 +160,8 @@ Summary:
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/claude-hub.git
-cd claude-hub
+git clone https://github.com/yourusername/claudy.git
+cd claudy
 
 # Verify marketplace is ready
 ./scripts/verify-marketplace.sh
@@ -177,17 +177,17 @@ cd claude-hub
 /plugin
 
 # Direct installation
-/plugin install rails-generators@claude-hub
-/plugin install react-typescript-workflow@claude-hub
-/plugin install rails-code-reviewer@claude-hub
-/plugin install react-typescript-reviewer@claude-hub
-/plugin install ui-ux-designer@claude-hub
+/plugin install rails-generators@claudy
+/plugin install react-typescript-workflow@claudy
+/plugin install rails-code-reviewer@claudy
+/plugin install react-typescript-reviewer@claudy
+/plugin install ui-ux-designer@claudy
 ```
 
 ## 📁 Project Structure
 
 ```
-claude-hub/
+claudy/
 ├── .claude-plugin/
 │   └── marketplace.json           # ✅ Marketplace configuration
 ├── plugins/
@@ -337,4 +337,4 @@ For issues or questions:
 
 ---
 
-**The Claude Hub Plugin Marketplace is ready for production use!** 🎊
+**The Claudy Plugin Marketplace is ready for production use!** 🎊

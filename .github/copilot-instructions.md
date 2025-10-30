@@ -1,16 +1,16 @@
-# Claude Hub: AI Coding Agent Instructions
+# Claudy: AI Coding Agent Instructions
 
-This guide enables AI agents to be immediately productive in the Claude Hub codebase, focusing on plugin development for Rails, React/TypeScript, code review, and UI/UX workflows.
+This guide enables AI agents to be immediately productive in the Claudy codebase, focusing on plugin development for Rails, React/TypeScript, code review, and UI/UX workflows.
 
 ## Architecture Overview
 
-- **Monorepo Structure:** All plugins live under `plugins/claude-hub/`, grouped by technology (e.g., `rails-generators`, `react-typescript-workflow`). Shared utilities are in `shared/`.
+- **Monorepo Structure:** All plugins live under `plugins/claudy/`, grouped by technology (e.g., `rails-generators`, `react-typescript-workflow`). Shared utilities are in `shared/`.
 - **Plugin Boundaries:** Each plugin is self-contained with its own `package.json`, `README.md`, and command/agent definitions. No cross-plugin imports.
 - **Service Integration:** Rails plugins use MCP servers (`rails-mcp-servers`) for safe filesystem access and real-time Rails documentation queries.
 
 ## Developer Workflows
 
-- **Install Plugins:** Use `/plugin install <plugin>@claude-hub` in Claude Code CLI, or run provided shell scripts in `scripts/`.
+- **Install Plugins:** Use `/plugin install <plugin>@claudy` in Claude Code CLI, or run provided shell scripts in `scripts/`.
 - **Rails Plugin Usage:**
   - Copy `.claude` or `.claude-plugin` directories to your Rails project root for agent activation.
   - Use slash commands (e.g., `/rails-generate-model`, `/rails-add-turbo-stream`) to automate Rails tasks.
@@ -53,8 +53,8 @@ This guide enables AI agents to be immediately productive in the Claude Hub code
 
 ## Key Files & Directories
 
-- `plugins/claude-hub/<plugin>/README.md` — Plugin-specific usage and conventions
-- `plugins/claude-hub/rails-mcp-servers/mcp-servers/` — MCP server configs
+- `plugins/claudy/<plugin>/README.md` — Plugin-specific usage and conventions
+- `plugins/claudy/rails-mcp-servers/mcp-servers/` — MCP server configs
 - `shared/utils/` — Common utilities for plugin builders
 - `scripts/` — Shell scripts for plugin management
 

@@ -1,13 +1,13 @@
-# Claude Hub Quick Start Guide
+# Claudy Quick Start Guide
 
-Get started with Claude Hub plugins in 5 minutes!
+Get started with Claudy plugins in 5 minutes!
 
 ## Installation
 
 ```bash
 # 1. Clone the repository
-git clone https://github.com/yourusername/claude-hub.git
-cd claude-hub
+git clone https://github.com/yourusername/claudy.git
+cd claudy
 
 # 2. Verify everything is ready
 ./scripts/verify-marketplace.sh
@@ -26,8 +26,8 @@ claude
 /plugin
 
 # Or install specific plugins directly
-/plugin install rails-workflow@claude-hub
-/plugin install react-typescript-workflow@claude-hub
+/plugin install rails-generators@claudy
+/plugin install react-typescript-workflow@claudy
 ```
 
 ## Rails Development
@@ -87,11 +87,11 @@ Just ask: "Review my React component" - The React/TypeScript code review agent w
 /plugin list
 
 # Enable/disable plugins
-/plugin enable plugin-name@claude-hub
-/plugin disable plugin-name@claude-hub
+/plugin enable plugin-name@claudy
+/plugin disable plugin-name@claudy
 
 # Uninstall plugins
-/plugin uninstall plugin-name@claude-hub
+/plugin uninstall plugin-name@claudy
 
 # View available commands
 /help
@@ -232,4 +232,4 @@ Just ask: "Review my React component" - The React/TypeScript code review agent w
 
 ---
 
-**Happy coding with Claude Hub!** 🚀
+**Happy coding with Claudy!** 🚀

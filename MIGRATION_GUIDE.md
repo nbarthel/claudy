@@ -46,18 +46,18 @@ We've renamed all plugins and agents to follow consistent naming best practices.
 # In your project with Claude Code
 
 # Uninstall old plugins
-/plugin uninstall rails-workflow@claude-hub
-/plugin uninstall rails-dev-workflow@claude-hub
-/plugin uninstall rails-code-review-agent@claude-hub
-/plugin uninstall react-typescript-code-review-agent@claude-hub
-/plugin uninstall ui-ux-design-agent@claude-hub
+/plugin uninstall rails-workflow@claudy
+/plugin uninstall rails-dev-workflow@claudy
+/plugin uninstall rails-code-review-agent@claudy
+/plugin uninstall react-typescript-code-review-agent@claudy
+/plugin uninstall ui-ux-design-agent@claudy
 
 # Install new plugins
-/plugin install rails-generators@claude-hub
-/plugin install rails-api-workflow@claude-hub
-/plugin install rails-code-reviewer@claude-hub
-/plugin install react-typescript-reviewer@claude-hub
-/plugin install ui-ux-designer@claude-hub
+/plugin install rails-generators@claudy
+/plugin install rails-api-workflow@claudy
+/plugin install rails-code-reviewer@claudy
+/plugin install react-typescript-reviewer@claudy
+/plugin install ui-ux-designer@claudy
 ```
 
 **Option 2: Manual Directory Rename**
@@ -89,7 +89,7 @@ mv rails-dev.md rails-start-dev.md 2>/dev/null || true
 mv rails-feature.md rails-add-feature.md 2>/dev/null || true
 ```
 
-### If You're Updating Claude Hub Repository
+### If You're Updating Claudy Repository
 
 ```bash
 # Pull latest changes
@@ -218,11 +218,11 @@ After migrating, verify your plugins:
 /plugin list
 
 # Should show new names:
-# - rails-generators@claude-hub
-# - rails-api-workflow@claude-hub
-# - rails-code-reviewer@claude-hub
-# - react-typescript-reviewer@claude-hub
-# - ui-ux-designer@claude-hub
+# - rails-generators@claudy
+# - rails-api-workflow@claudy
+# - rails-code-reviewer@claudy
+# - react-typescript-reviewer@claudy
+# - ui-ux-designer@claudy
 ```
 
 ## Troubleshooting
@@ -231,7 +231,7 @@ After migrating, verify your plugins:
 
 If you get a "plugin not found" error:
 
-1. Update your Claude Hub repository: `git pull origin main`
+1. Update your Claudy repository: `git pull origin main`
 2. Clear Claude Code cache (restart Claude Code)
 3. Reinstall the plugin with the new name
 
@@ -256,7 +256,7 @@ If you encounter issues:
 
 1. Check this migration guide
 2. Review [TROUBLESHOOTING.md](TROUBLESHOOTING.md)
-3. Report issues at <https://github.com/claude-squad/claude-hub/issues>
+3. Report issues at <https://github.com/nbarthel/claudy/issues>
 
 ## Timeline
 

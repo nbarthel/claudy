@@ -1,9 +1,9 @@
 #!/bin/bash
 
-# Verify Claude Hub marketplace is properly set up
+# Verify Claudy marketplace is properly set up
 # Usage: ./scripts/verify-marketplace.sh
 
-echo "Claude Hub Marketplace Verification"
+echo "Claudy Marketplace Verification"
 echo "=================================="
 echo ""
 
