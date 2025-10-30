@@ -185,33 +185,86 @@ By checking documentation:
 
 ## Configuration
 
-### Rails Version
+### Quick Setup
 
-Set the Rails version in your project's MCP configuration:
+1. **Copy environment template**:
+   ```bash
+   cp .env.example .env
+   ```
 
-```json
-{
-  "env": {
-    "RAILS_VERSION": "7.1"
-  }
-}
+2. **Configure API key (optional)**:
+   ```bash
+   # Edit .env
+   RAILS_DOCS_API_KEY=your_api_key_here
+   ```
+
+3. **Set Rails version**:
+   ```bash
+   RAILS_VERSION=8.0
+   ```
+
+See [SETUP.md](./SETUP.md) for detailed configuration guide.
+
+### API Key Configuration
+
+The Rails documentation server supports optional API key authentication for enhanced access.
+
+**Environment Variable**: `RAILS_DOCS_API_KEY`
+
+**Setup**:
+```bash
+# In your project's .env file
+RAILS_DOCS_API_KEY=your_api_key_here
 ```
 
-Supported versions: 7.0, 7.1, edge
+**Note**: API key is optional. The plugin works with free tier if no key is provided.
+
+### Rails Version
+
+Set the Rails version for documentation:
+
+**Environment Variable**: `RAILS_VERSION`
+
+**Default**: `8.0`
+
+**Supported versions**: `7.0`, `7.1`, `8.0`, `edge`
+
+**Setup**:
+```bash
+# In your .env file
+RAILS_VERSION=8.0
+```
 
 ### Filesystem Scope
 
-The filesystem server is automatically scoped to your Rails project root. You can further restrict directories by modifying `mcp-servers/filesystem.json`:
+The filesystem server is automatically scoped to your Rails project root. You can configure allowed directories:
 
-```json
-{
-  "env": {
-    "ALLOWED_DIRECTORIES": "app,config,db,spec"
-  }
-}
+**Environment Variable**: `ALLOWED_DIRECTORIES`
+
+**Default**: `app,config,db,lib,spec,test`
+
+**Setup**:
+```bash
+# In your .env file
+ALLOWED_DIRECTORIES=app,config,db,spec
 ```
 
+For more configuration options, see [SETUP.md](./SETUP.md).
+
 ## Security
+
+### API Key Security
+
+- **Environment Variables**: API keys stored in `.env` file (not committed to git)
+- **Add to .gitignore**: Ensure `.env` is in your `.gitignore` file
+- **No Hardcoding**: Never hardcode API keys in configuration files
+- **Team Sharing**: Share `.env.example` template, not actual `.env` with keys
+
+**Important**: Add to your `.gitignore`:
+```bash
+# Add this line to .gitignore
+.env
+```
 
 ### Filesystem Security
 
@@ -225,6 +278,7 @@ The filesystem server is automatically scoped to your Rails project root. You ca
 - **Read-Only**: Documentation server is read-only
 - **No Execution**: Cannot execute code, only read docs
 - **Official Sources**: Only fetches from official Rails documentation
+- **API Key Optional**: Works without API key (free tier)
 
 ## Works with Rails Plugins
 
