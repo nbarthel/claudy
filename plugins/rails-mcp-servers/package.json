@@ -1,0 +1,17 @@
+{
+  "name": "@claudy/rails-mcp-servers",
+  "version": "0.1.0",
+  "description": "MCP server configurations for Rails development",
+  "keywords": [
+    "rails",
+    "ruby",
+    "mcp",
+    "claude-code"
+  ],
+  "author": "Claudy",
+  "license": "MIT",
+  "peerDependencies": {
+    "@modelcontextprotocol/server-rails": "*",
+    "@modelcontextprotocol/server-filesystem": "*"
+  }
+}

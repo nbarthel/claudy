@@ -1,0 +1,34 @@
+# frozen_string_literal: true
+
+# <%= description %>
+# Usage: <%= class_name %>.new(<%= init_params %>).call
+class <%= class_name %>
+  # == Attributes ===========================================================
+  attr_reader <%= attr_readers %>
+
+  # == Initialization =======================================================
+  def initialize(<%= init_params %>)
+<% init_params.split(',').each do |param| %>
+    @<%= param.strip %> = <%= param.strip %>
+<% end %>
+  end
+
+  # == Public Interface =====================================================
+  def call
+    ApplicationRecord.transaction do
+      <%= service_logic %>
+    end
+  rescue StandardError => e
+    handle_error(e)
+  end
+
+  private
+
+  <%= private_methods %>
+
+  def handle_error(error)
+    Rails.logger.error("#{self.class.name} failed: #{error.message}")
+    Rails.logger.error(error.backtrace.join("\n"))
+    raise error
+  end
+end
