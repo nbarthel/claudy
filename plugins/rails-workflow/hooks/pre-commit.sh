@@ -39,7 +39,7 @@ for file in $CONTROLLER_FILES; do
   if [ -f "$file" ]; then
     # Check if file has create or update actions
     if grep -qE "def (create|update)" "$file"; then
-      if ! grep -q "params\.require\|params\.permit" "$file"; then
+      if ! grep -Eq "params\.require|params\.permit" "$file"; then
         echo "⚠️  Warning: $file has create/update actions but no strong parameters visible"
         echo "Verify strong parameters are properly defined"
       fi
@@ -62,7 +62,7 @@ for file in $MIGRATION_FILES; do
   if [ -f "$file" ]; then
     # Check for dangerous operations without reversible block
     if grep -qE "remove_column|drop_table" "$file"; then
-      if ! grep -q "reversible do\|def down" "$file"; then
+      if ! grep -Eq "reversible do|def down" "$file"; then
         echo "⚠️  Warning: $file has destructive operation without reversible block"
         echo "Add reversible block or down method"
       fi

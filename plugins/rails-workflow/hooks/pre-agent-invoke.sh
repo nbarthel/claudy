@@ -34,8 +34,8 @@ if [ ! -d "app" ]; then
   exit 1
 fi
 
-# Detect Rails version
-RAILS_VERSION=$(grep "gem ['\"]rails['\"]" Gemfile | grep -oP "[\d\.]+" | head -1)
+# Detect Rails version (POSIX-compatible)
+RAILS_VERSION=$(grep "gem ['\"]rails['\"]" Gemfile | sed -n 's/.*[^0-9]\([0-9][0-9]*\.[0-9][0-9]*\.[0-9][0-9]*\).*/\1/p' | head -1)
 echo "✅ Rails project detected (version: ${RAILS_VERSION:-unknown})"
 
 # Check for Rails 8 specific features
