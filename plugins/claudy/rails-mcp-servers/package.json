@@ -8,7 +8,7 @@
     "mcp",
     "claude-code"
   ],
-  "author": "Claude Squad",
+  "author": "Claudy",
   "license": "MIT",
   "peerDependencies": {
     "@modelcontextprotocol/server-rails": "*",

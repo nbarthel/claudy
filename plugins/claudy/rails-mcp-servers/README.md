@@ -12,7 +12,7 @@ Foundation infrastructure for Rails development in Claude Code. This plugin prov
 **Works Standalone or with Workflow Plugins:**
 
 - ✅ Use independently for general Rails assistance
-- ✅ Enhances `rails-api-workflow` agents
+- ✅ Enhances `rails-workflow` agents
 - ✅ Improves `rails-generators` accuracy
 - ✅ Helps `rails-code-reviewer` verify patterns
 - ✅ Can be used by any Rails plugin

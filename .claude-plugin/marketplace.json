@@ -3,7 +3,7 @@
   "description": "Claudy - A curated collection of high-quality Claude Code plugins for software development workflows",
   "version": "0.1.0",
   "owner": {
-    "name": "Claude Squad",
+    "name": "Claudy",
     "url": "https://github.com/claude-squad/claudy"
   },
   "plugins": [
@@ -13,7 +13,7 @@
       "description": "Complete workflow automation for Ruby on Rails development with model generation, controllers, Turbo Streams, service objects, RSpec setup, and API endpoints",
       "version": "0.1.0",
       "author": {
-        "name": "Claude Squad"
+        "name": "Nic Barthelemy (nbarthel)"
       },
       "homepage": "https://github.com/claude-squad/claudy/tree/main/plugins/claudy/rails-generators",
       "repository": "https://github.com/claude-squad/claudy.git",
