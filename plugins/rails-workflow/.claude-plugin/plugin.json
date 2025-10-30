@@ -1,7 +1,7 @@
 {
   "name": "rails-workflow",
   "description": "Comprehensive Rails API development workflow with specialized AI agents for models, controllers, services, tests, and devops. Optimized for Rails 8 API development with Solid Queue, authentication, and modern patterns.",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "author": {
     "name": "Nic Barthelemy (nbarthel)"
   },
