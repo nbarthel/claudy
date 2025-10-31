@@ -16,13 +16,17 @@ echo "Checking for security issues..."
 if echo "$FILES_CHANGED" | grep -q "controller"; then
   echo "Validating strong parameters in controllers..."
   for file in $FILES_CHANGED; do
-    if [[ $file == *"controller"* ]] && [ -f "$file" ]; then
-      if grep -qE "def (create|update)" "$file"; then
-        if ! grep -q "_params" "$file"; then
-          echo "⚠️  Warning: $file may be missing strong parameters"
+    case "$file" in
+      *controller*)
+        if [ -f "$file" ]; then
+          if grep -qE "def (create|update)" "$file"; then
+            if ! grep -q "_params" "$file"; then
+              echo "⚠️  Warning: $file may be missing strong parameters"
+            fi
+          fi
         fi
-      fi
-    fi
+        ;;
+    esac
   done
 fi
 
@@ -36,13 +40,15 @@ echo "Validating Rails conventions..."
 
 # Model file naming
 for file in $FILES_CHANGED; do
-  if [[ $file == app/models/* ]] && [ -f "$file" ]; then
-    filename=$(basename "$file" .rb)
-    # Simple check - could be enhanced
-    if [ -f "$file" ]; then
-      echo "✓ Model file: $file"
-    fi
-  fi
+  case "$file" in
+    app/models/*)
+      if [ -f "$file" ]; then
+        filename=$(basename "$file" .rb)
+        # Simple check - could be enhanced
+        echo "✓ Model file: $file"
+      fi
+      ;;
+  esac
 done
 
 # Run tests if test files were modified or created

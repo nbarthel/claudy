@@ -2,32 +2,36 @@
   "hooks": {
     "PreToolUse": [
       {
-        "script": "./hooks/pre-agent-invoke.sh",
-        "description": "Verify Rails project exists before agents run",
-        "required": true,
-        "timeout_ms": 5000
+        "hooks": [
+          {
+            "type": "command",
+            "command": "${CLAUDE_PLUGIN_ROOT}/hooks/pre-agent-invoke.sh",
+            "description": "Verify Rails project exists before agents run"
+          }
+        ]
       }
     ],
     "PostToolUse": [
       {
-        "script": "./hooks/post-agent-invoke.sh",
-        "description": "Validate agent output and run tests",
-        "required": false,
-        "timeout_ms": 30000
+        "hooks": [
+          {
+            "type": "command",
+            "command": "${CLAUDE_PLUGIN_ROOT}/hooks/post-agent-invoke.sh",
+            "description": "Validate agent output and run tests"
+          }
+        ]
       }
     ],
     "UserPromptSubmit": [
       {
-        "script": "./hooks/pre-commit.sh",
-        "description": "Security and quality checks before commits",
-        "required": true,
-        "timeout_ms": 60000
+        "hooks": [
+          {
+            "type": "command",
+            "command": "${CLAUDE_PLUGIN_ROOT}/hooks/pre-commit.sh",
+            "description": "Security and quality checks before commits"
+          }
+        ]
       }
     ]
-  },
-  "config": {
-    "fail_on_error": true,
-    "verbose": true,
-    "skip_hooks_env": "SKIP_RAILS_HOOKS"
   }
 }
