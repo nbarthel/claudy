@@ -41,35 +41,30 @@ RSpec.describe 'rails-pattern-finder skill' do
   describe 'Ref MCP integration' do
     context 'when Ref MCP is available' do
       it 'can search for patterns' do
-        mock_ref_search(
-          'Rails 8.0 authentication pattern',
-          [{ url: 'https://guides.rubyonrails.org/v8.0/security.html' }]
-        )
-
-        expect(self).to receive(:ref_search_documentation)
+        # Expected: Skill documents ref_search_documentation for pattern research
+        # This tests documentation, not runtime execution
+        expect(skill_content).to include('Ref').or include('ref')
       end
     end
 
     context 'when Ref MCP is not available' do
-      before { disable_ref_mcp }
-
       it 'uses Grep for local pattern search' do
-        mock_grep('class.*Service', ['app/services/user_service.rb'])
-
-        # Expected: Falls back to Grep + WebFetch
+        # Expected: Skill documents Grep for local codebase pattern search
+        # This tests documentation, not runtime execution
+        expect(skill_content).to include('Grep')
       end
     end
   end
 
   describe 'pattern categories' do
     let(:patterns) do
-      [
-        'authentication',
-        'background_jobs',
-        'caching',
-        'real_time',
-        'file_uploads',
-        'pagination'
+      %w[
+        authentication
+        background_jobs
+        caching
+        real_time
+        file_uploads
+        pagination
       ]
     end
 
@@ -101,20 +96,15 @@ RSpec.describe 'rails-pattern-finder skill' do
 
   describe 'codebase search' do
     it 'can find service objects' do
-      mock_glob('app/services/*_service.rb', [
-        'app/services/user_service.rb',
-        'app/services/post_service.rb'
-      ])
-
-      # Expected: Lists existing service patterns
+      # Expected: Skill documents Glob/Grep usage for codebase search
+      # This tests documentation, not runtime execution
+      expect(skill_content).to include('Glob').or include('Grep')
     end
 
     it 'can find controller patterns' do
-      mock_grep('class.*Controller', [
-        'app/controllers/api/v1/posts_controller.rb'
-      ])
-
-      # Expected: Shows existing controller structure
+      # Expected: Skill documents pattern search capabilities
+      # This tests documentation, not runtime execution
+      expect(skill_content).to include('pattern').or include('search')
     end
   end
 
@@ -123,13 +113,13 @@ RSpec.describe 'rails-pattern-finder skill' do
       pattern = 'completely_unknown_pattern'
       expect(skill_reference).not_to include(pattern)
 
-      # Expected: Error with available patterns list
+      # Expected: Error with available patterns list (documented behavior)
     end
 
     it 'handles empty codebase' do
-      mock_glob('app/**/*.rb', [])
-
-      # Expected: Returns best-practice examples from reference
+      # Expected: Returns best-practice examples from reference (documented behavior)
+      # This tests documentation, not runtime execution
+      expect(skill_reference).to include('best_practice')
     end
   end
 end

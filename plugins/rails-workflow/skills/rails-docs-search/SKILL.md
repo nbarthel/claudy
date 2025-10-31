@@ -89,6 +89,9 @@ URL: [URL from search results]
 Tool: WebFetch
 URL: [constructed URL from reference.md]
 Prompt: "Extract sections about [specific query]"
+
+Note: WebFetch has a built-in 15-minute cache for faster responses
+when repeatedly accessing the same URL within a session.
 ```
 
 ### Step 4: Response Formatting

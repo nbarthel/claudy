@@ -665,6 +665,184 @@ decorators:
 
 ---
 
+## Rails 8 Defaults
+
+Rails 8 includes several built-in solutions that replace common third-party gems:
+
+### Solid Queue
+**Purpose**: Background job processing (replaces Sidekiq, Resque, Delayed Job)
+
+Rails 8's default background job adapter. Provides:
+- Database-backed job queue
+- No Redis dependency
+- Built-in retry logic
+- Job prioritization
+- Mission control web UI
+
+**Setup**:
+```bash
+bin/rails solid_queue:install
+```
+
+**Usage**:
+```ruby
+# config/application.rb or config/environments/production.rb
+config.active_job.queue_adapter = :solid_queue
+
+# Jobs work the same as before
+class ProcessPaymentJob < ApplicationJob
+  queue_as :critical
+
+  def perform(payment_id)
+    # Job logic
+  end
+end
+```
+
+### Solid Cache
+**Purpose**: Database-backed caching (replaces Redis, Memcached for caching)
+
+Rails 8's default cache store. Provides:
+- Database-backed cache
+- No Redis dependency
+- All standard Rails cache features
+- Automatic expiration
+- Production-ready performance
+
+**Setup**:
+```bash
+bin/rails solid_cache:install
+```
+
+**Usage**:
+```ruby
+# config/environments/production.rb
+config.cache_store = :solid_cache_store
+
+# Caching works the same as before
+Rails.cache.fetch('expensive_query', expires_in: 1.hour) do
+  # Expensive operation
+end
+```
+
+### Solid Cable
+**Purpose**: Database-backed Action Cable (replaces Redis for WebSocket pub/sub)
+
+Rails 8's default Action Cable adapter. Provides:
+- Database-backed pub/sub
+- No Redis dependency for real time features
+- WebSocket support
+- Horizontal scaling support
+
+**Setup**:
+```bash
+bin/rails solid_cable:install
+```
+
+**Usage**:
+```ruby
+# config/cable.yml
+production:
+  adapter: solid_cable
+
+# Channels work the same as before
+class ChatChannel < ApplicationCable::Channel
+  def subscribed
+    stream_from "chat_#{params[:room_id]}"
+  end
+end
+```
+
+### When to Use Rails 8 Defaults
+
+**Use Solid Queue when**:
+- Starting new Rails 8 project
+- Want to avoid Redis operational complexity
+- Job volume < 1000/second
+- Prefer simplicity over maximum throughput
+
+**Use Solid Cache when**:
+- Starting new Rails 8 project
+- Cache hit rates are moderate
+- Want unified database infrastructure
+- Avoiding Redis operational overhead
+
+**Use Solid Cable when**:
+- Starting new Rails 8 project
+- Real-time features with moderate concurrency
+- Want to simplify infrastructure
+- Database can handle WebSocket load
+
+**Consider alternatives when**:
+- Extreme performance requirements (millions of jobs/sec)
+- Very high cache hit rates (>95%)
+- Thousands of concurrent WebSocket connections
+- Already have Redis in production
+
+---
+
+## Pattern Categories
+
+The `rails-pattern-finder` skill recognizes these pattern categories:
+
+### Authentication
+User login, session management, password handling
+
+**Common implementations**:
+- Devise gem
+- Rails authentication generator (Rails 8+)
+- Custom authentication with `has_secure_password`
+- OAuth integrations (OmniAuth)
+
+### Background Jobs
+Asynchronous task processing
+
+**Common implementations**:
+- Solid Queue (Rails 8 default)
+- Sidekiq
+- Resque
+- Delayed Job
+- ActiveJob with any adapter
+
+### Caching
+Performance optimization through data caching
+
+**Common implementations**:
+- Solid Cache (Rails 8 default)
+- Redis cache store
+- Memcached
+- File store
+- Database-backed caching
+
+### Real Time
+WebSocket connections and live updates
+
+**Common implementations**:
+- Solid Cable (Rails 8 default for Action Cable)
+- Action Cable with Redis
+- Hotwire Turbo Streams
+- Server-Sent Events (SSE)
+
+### File Uploads
+Handling user-uploaded files
+
+**Common implementations**:
+- Active Storage (Rails built-in)
+- Shrine
+- CarrierWave
+- Paperclip (deprecated)
+
+### Pagination
+Dividing large datasets into pages
+
+**Common implementations**:
+- Pagy
+- Kaminari
+- will_paginate
+- Custom pagination with `limit/offset`
+
+---
+
 ## Usage
 
 Each pattern includes:
@@ -680,3 +858,4 @@ The `rails-pattern-finder` skill uses these definitions to:
 1. Search the codebase for existing patterns
 2. Extract relevant examples
 3. Provide best-practice templates when pattern not found
+4. Recommend Rails 8 built-in alternatives when appropriate

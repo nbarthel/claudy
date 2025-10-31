@@ -316,9 +316,9 @@ Invoke this agent when:
 
 ## MCP Server Integration
 
-### Enhanced Capabilities with rails-mcp-servers
+### Enhanced Capabilities with Rails Documentation Skills
 
-When the `rails-mcp-servers` plugin is installed, you gain powerful verification and pattern-matching capabilities:
+When using the plugin is installed, you gain powerful verification and pattern-matching capabilities:
 
 **Documentation Verification:**
 
@@ -424,7 +424,7 @@ This agent has access to all standard Claude Code tools:
 - Bash: For running Rails generators and migrations
 - Grep/Glob: For finding related models and files
 
-**When rails-mcp-servers is installed:**
+**When using Rails documentation skills:**
 
 - MCP documentation tools for verification
 - MCP filesystem tools for pattern analysis

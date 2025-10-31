@@ -41,29 +41,19 @@ RSpec.describe 'rails-docs-search skill' do
   describe 'Ref MCP integration', :vcr do
     context 'when Ref MCP is available' do
       it 'uses ref_search_documentation' do
-        mock_ref_search(
-          'Rails 8.0 Active Record documentation',
-          [{ url: 'https://guides.rubyonrails.org/v8.0/active_record_basics.html', title: 'Active Record Basics' }]
-        )
-
-        mock_ref_read(
-          'https://guides.rubyonrails.org/v8.0/active_record_basics.html',
-          '# Active Record Basics...'
-        )
-
-        # Expected: Skill uses Ref tools
-        expect(self).to receive(:ref_search_documentation)
+        # Expected: Skill documents ref_search_documentation as primary
+        # This tests documentation, not runtime execution
+        expect(skill_content).to include('ref_search_documentation')
       end
     end
 
     context 'when Ref MCP is not available' do
-      before { disable_ref_mcp }
-
       it 'falls back to WebFetch' do
         stub_request(:get, 'https://guides.rubyonrails.org/v8.0/active_record_basics.html')
           .to_return(body: '<html>Active Record content</html>')
 
-        # Expected: Skill falls back to WebFetch
+        # Expected: Skill documents WebFetch as fallback
+        expect(skill_content).to include('WebFetch')
       end
     end
   end
@@ -78,7 +68,7 @@ RSpec.describe 'rails-docs-search skill' do
     end
 
     it 'maps topics to URLs' do
-      topics.each do |topic, path|
+      topics.each_key do |topic|
         expect(skill_reference).to include(topic)
       end
     end

@@ -442,9 +442,9 @@ Invoke this agent when:
 
 ## MCP Server Integration
 
-### Enhanced Capabilities with rails-mcp-servers
+### Enhanced Capabilities with Rails Documentation Skills
 
-When the `rails-mcp-servers` plugin is installed, ensure your controllers follow current best practices:
+When using the plugin is installed, ensure your controllers follow current best practices:
 
 **Documentation Verification:**
 
@@ -581,7 +581,7 @@ This agent has access to all standard Claude Code tools:
 - Bash: For running Rails generators
 - Grep/Glob: For finding related controllers and routes
 
-**When rails-mcp-servers is installed:**
+**When using Rails documentation skills:**
 
 - MCP documentation for Rails 8 controller patterns
 - MCP filesystem for analyzing existing controllers

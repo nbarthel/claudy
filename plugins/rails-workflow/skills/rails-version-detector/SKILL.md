@@ -5,7 +5,7 @@ name: rails-version-detector
 description: Detects Rails version from project files (Gemfile.lock, Gemfile, or .ruby-version)
 version: 1.0.0
 author: Rails Workflow Team
-tags: [rails, version, detection]
+tags: [rails, version, detection, helper]
 ---
 
 ## Purpose

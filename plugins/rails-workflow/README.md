@@ -22,13 +22,13 @@ A comprehensive, self-contained Rails development plugin inspired by [claude-on-
 
 This plugin provides a team of specialized Rails agents that work together like a real development team, **with automatic quality enforcement** through skills and hooks.
 
-**Self-Contained Design** (v0.3.0): All documentation capabilities are now built-in as skills - no external MCP server required! The plugin includes:
+**Self-Contained Design** (v0.3.0): All documentation capabilities are now built-in as skills. The plugin includes:
 - Rails version detection from project files
-- Official Rails Guides search via WebFetch
+- Official Rails Guides search via Ref MCP (with WebFetch fallback)
 - API documentation lookup
 - Code pattern finding in your codebase
 
-**Optional Enhancement**: The separate `rails-mcp-servers` plugin is still available for advanced use cases, but is no longer required for basic functionality.
+**Optional Enhancement**: Install the optional `ref-tools-mcp` server for token-efficient documentation access (see setup instructions below).
 
 ## Documentation Skills (v0.3.0) 📚
 
@@ -632,10 +632,7 @@ For issues and questions:
 # 1. Install the plugin
 /plugin install rails-workflow@claudy
 
-# 2. Optionally install MCP servers for enhanced capabilities
-/plugin install rails-mcp-servers@claudy
-
-# 3. Start building - skills and hooks activate automatically!
+# 2. Start building - skills and hooks activate automatically!
 /rails-dev Add a Post model with title and body
 
 # Skills auto-validate:

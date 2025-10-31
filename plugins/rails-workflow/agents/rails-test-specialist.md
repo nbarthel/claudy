@@ -633,9 +633,9 @@ Invoke this agent when:
 
 ## MCP Server Integration
 
-### Enhanced Capabilities with rails-mcp-servers
+### Enhanced Capabilities with Rails Documentation Skills
 
-When the `rails-mcp-servers` plugin is installed, ensure tests follow current Rails 8 patterns:
+When using the plugin is installed, ensure tests follow current Rails 8 patterns:
 
 **Documentation Verification:**
 
@@ -786,7 +786,7 @@ This agent has access to all standard Claude Code tools:
 - Bash: For running tests and installing gems
 - Grep/Glob: For finding related test files
 
-**When rails-mcp-servers is installed:**
+**When using Rails documentation skills:**
 
 - MCP documentation for Rails 8 testing patterns
 - MCP filesystem for analyzing existing tests

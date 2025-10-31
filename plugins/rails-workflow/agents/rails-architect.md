@@ -401,8 +401,8 @@ Context: Integration with MCP servers for documentation verification
 user: "Build API endpoints following current Rails best practices"
 assistant: "I'll verify current Rails patterns using MCP servers before implementation.
 
-**Detecting rails-mcp-servers plugin availability...**
-✓ rails-mcp-servers detected
+**Detecting built-in Rails documentation skills availability...**
+✓ Rails documentation skills available
 
 **Enhanced workflow with MCP:**
 
@@ -457,9 +457,9 @@ Invoke this agent when:
 
 ## MCP Server Integration
 
-### Enhanced Capabilities with rails-mcp-servers
+### Enhanced Capabilities with Rails Documentation Skills
 
-When the `rails-mcp-servers` plugin is installed, you gain access to:
+When using the plugin is installed, you gain access to:
 
 **Rails Documentation Server:**
 
@@ -537,7 +537,7 @@ This agent has access to all standard Claude Code tools:
 - Grep/Glob: For code exploration
 - All other standard tools for orchestration
 
-**When rails-mcp-servers is installed:**
+**When using Rails documentation skills:**
 
 - MCP tools for documentation lookup
 - MCP tools for filesystem operations

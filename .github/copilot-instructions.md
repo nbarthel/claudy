@@ -6,7 +6,7 @@ This guide enables AI agents to be immediately productive in the Claudy codebase
 
 - **Monorepo Structure:** All plugins live under `plugins/claudy/`, grouped by technology (e.g., `rails-generators`, `react-typescript-workflow`). Shared utilities are in `shared/`.
 - **Plugin Boundaries:** Each plugin is self-contained with its own `package.json`, `README.md`, and command/agent definitions. No cross-plugin imports.
-- **Service Integration:** Rails plugins use MCP servers (`rails-mcp-servers`) for safe filesystem access and real-time Rails documentation queries.
+- **Service Integration:** Rails plugins use built-in skills with Ref MCP for token-efficient documentation queries.
 
 ## Developer Workflows
 
@@ -14,9 +14,10 @@ This guide enables AI agents to be immediately productive in the Claudy codebase
 - **Rails Plugin Usage:**
   - Copy `.claude` or `.claude-plugin` directories to your Rails project root for agent activation.
   - Use slash commands (e.g., `/rails-generate-model`, `/rails-add-turbo-stream`) to automate Rails tasks.
-- **MCP Servers:**
-  - MCP servers (see `rails-mcp-servers/mcp-servers/`) provide agents with scoped access to Rails docs and project files. Configuration is in JSON files; only allowed directories are accessible.
+- **Documentation Skills:**
+  - Built-in skills (rails-docs-search, rails-api-lookup, rails-pattern-finder) provide agents with access to Rails documentation.
   - Agents query Rails docs for conventions, reducing hallucination and ensuring up-to-date patterns.
+  - Optional ref-tools-mcp server can be installed for token-efficient documentation access.
 
 ## Project-Specific Conventions
 
@@ -32,8 +33,7 @@ This guide enables AI agents to be immediately productive in the Claudy codebase
 
 ## Integration Points
 
-- **External Docs:** Rails plugins fetch official Rails, Turbo, Stimulus, and Kamal docs via MCP servers.
-- **Filesystem Access:** Agents can only read/write within allowed directories (`app/`, `config/`, `db/`, etc.). Critical directories (`.git/`, `node_modules/`, etc.) are blocked.
+- **External Docs:** Rails plugins fetch official Rails documentation via built-in skills using Ref MCP or WebFetch.
 
 ## Examples
 
@@ -53,9 +53,8 @@ This guide enables AI agents to be immediately productive in the Claudy codebase
 
 ## Key Files & Directories
 
-- `plugins/claudy/<plugin>/README.md` — Plugin-specific usage and conventions
-- `plugins/claudy/rails-mcp-servers/mcp-servers/` — MCP server configs
-- `shared/utils/` — Common utilities for plugin builders
+- `plugins/<plugin>/README.md` — Plugin-specific usage and conventions
+- `plugins/rails-workflow/skills/` — Built-in documentation skills (Ref MCP integration)
 - `scripts/` — Shell scripts for plugin management
 
 ---

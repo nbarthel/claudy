@@ -30,23 +30,6 @@ Comprehensive Rails 8 development with specialized AI agents for models, control
 
 ---
 
-### MCP Integrations
-
-#### Rails MCP Servers (`rails-mcp-servers`)
-
-Model Context Protocol servers providing Rails documentation and filesystem access.
-
-**Features:**
-
-- Rails documentation search and retrieval
-- Rails API reference access
-- Filesystem operations for Rails projects
-- Integration with Claude Code MCP support
-
-**Installation:** `./scripts/install-plugin.sh rails-mcp-servers /path/to/project`
-
----
-
 ## Quick Start
 
 ### Installation
@@ -196,17 +179,11 @@ See [docs/best-practices/PLUGIN_GUIDELINES.md](docs/best-practices/PLUGIN_GUIDEL
 
 ## Plugin Categories
 
-### 1. Workflow Automation
+### Workflow Automation
 
 Plugins that automate common development tasks through slash commands and specialized agents.
 
 **Available:** rails-workflow
-
-### 2. MCP Integrations
-
-Model Context Protocol servers for documentation and tool access.
-
-**Available:** rails-mcp-servers
 
 ## Best Practices
 
@@ -251,8 +228,7 @@ We welcome contributions! To contribute:
 ```
 claudy/
 ├── plugins/                    # All plugins
-│   ├── rails-workflow/        # Rails 8 workflow with 7 agents
-│   └── rails-mcp-servers/     # Rails documentation MCP
+│   └── rails-workflow/        # Rails 8 workflow with 7 agents
 ├── docs/                       # Documentation
 │   └── best-practices/         # Plugin guidelines
 ├── scripts/                    # Utility scripts
@@ -306,8 +282,7 @@ See individual plugin READMEs for plugin-specific changes.
 
 ### v0.1.0 (Initial Release)
 
-- Rails Workflow plugin with 7 agents, 5 commands, and 2 safety hooks
-- Rails MCP Servers for documentation and filesystem access
+- Rails Workflow plugin with 7 agents, 5 commands, 2 safety hooks, and 4 skills
 - Utility scripts for plugin management (install, validate, list)
 - Comprehensive documentation and examples
 

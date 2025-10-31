@@ -50,10 +50,10 @@ module MockTools
   # Simulate Ref MCP not available
   def disable_ref_mcp
     allow_any_instance_of(Object).to receive(:ref_search_documentation)
-      .and_raise(NoMethodError, "Ref MCP not available")
+      .and_raise(NoMethodError, 'Ref MCP not available')
 
     allow_any_instance_of(Object).to receive(:ref_read_url)
-      .and_raise(NoMethodError, "Ref MCP not available")
+      .and_raise(NoMethodError, 'Ref MCP not available')
   end
 
   # Reset all tool mocks

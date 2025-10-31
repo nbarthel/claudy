@@ -10,8 +10,8 @@
     {
       "name": "rails-workflow",
       "source": "./plugins/rails-workflow",
-      "description": "Enhanced Rails development workflow (v2.0) with 7 specialized AI agents, 6 auto-invoking skills for quality enforcement, and 3 security hooks. Features automatic validation of conventions, security, performance, and testing. Optimized for Rails 8 with Solid Queue and modern patterns.",
-      "version": "0.2.0",
+      "description": "Enhanced Rails development workflow (v0.3.0) with 7 specialized AI agents, 4 documentation skills (Ref integration), 6 auto-invoking quality skills, and 3 security hooks. Features automatic validation of conventions, security, performance, and testing. Optimized for Rails 8 with Solid Queue and modern patterns.",
+      "version": "0.3.0",
       "author": {
         "name": "Nic Barthelemy (nbarthel)"
       },
@@ -19,21 +19,7 @@
       "repository": "https://github.com/nbarthel/claudy.git",
       "license": "MIT",
       "category": "workflow",
-      "keywords": ["rails", "ruby", "api", "workflow", "agents", "multi-agent", "rails-8", "solid-queue", "rest", "json", "skills", "hooks", "security", "performance", "quality-gates", "auto-validation"]
-    },
-    {
-      "name": "rails-mcp-servers",
-      "source": "./plugins/rails-mcp-servers",
-      "description": "MCP server configurations for Rails development providing access to Rails documentation, filesystem navigation, and Rails-specific tooling",
-      "version": "0.1.0",
-      "author": {
-        "name": "Nic Barthelemy"
-      },
-      "homepage": "https://github.com/nbarthel/claudy/tree/main/plugins/rails-mcp-servers",
-      "repository": "https://github.com/nbarthel/claudy.git",
-      "license": "MIT",
-      "category": "tools",
-      "keywords": ["rails", "ruby", "mcp", "servers", "documentation", "filesystem"]
+      "keywords": ["rails", "ruby", "api", "workflow", "agents", "multi-agent", "rails-8", "solid-queue", "rest", "json", "skills", "hooks", "security", "performance", "quality-gates", "auto-validation", "ref", "documentation"]
     }
   ],
   "repository": {

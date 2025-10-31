@@ -51,16 +51,16 @@ VCR.configure do |config|
   config.configure_rspec_metadata!
   config.default_cassette_options = {
     record: :new_episodes,
-    match_requests_on: [:method, :uri, :body]
+    match_requests_on: %i[method uri body]
   }
 
   # Filter sensitive data
-  config.filter_sensitive_data('<REDACTED>') { ENV['API_KEY'] }
+  config.filter_sensitive_data('<REDACTED>') { ENV.fetch('API_KEY', nil) }
 end
 
 # Load support files
-Dir[File.join(__dir__, 'support', '**', '*.rb')].sort.each { |f| require f }
+Dir[File.join(__dir__, 'support', '**', '*.rb')].each { |f| require f }
 
-puts "RSpec test suite for rails-workflow plugin"
+puts 'RSpec test suite for rails-workflow plugin'
 puts "Ruby version: #{RUBY_VERSION}"
 puts "RSpec version: #{RSpec::Version::STRING}"

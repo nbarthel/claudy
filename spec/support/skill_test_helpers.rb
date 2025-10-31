@@ -103,7 +103,7 @@ RSpec.configure do |config|
   config.include SkillTestHelpers
 
   # Cleanup after each test
-  config.after(:each) do
+  config.after do
     cleanup_test_project if defined?(@project_root)
   end
 end

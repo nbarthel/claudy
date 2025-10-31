@@ -563,9 +563,9 @@ Invoke this agent when:
 
 ## MCP Server Integration
 
-### Enhanced Capabilities with rails-mcp-servers
+### Enhanced Capabilities with Rails Documentation Skills
 
-When the `rails-mcp-servers` plugin is installed, ensure services follow current Rails 8 patterns:
+When using the plugin is installed, ensure services follow current Rails 8 patterns:
 
 **Documentation Verification:**
 
@@ -702,7 +702,7 @@ This agent has access to all standard Claude Code tools:
 - Edit: For refactoring controllers/models
 - Grep/Glob: For finding related code
 
-**When rails-mcp-servers is installed:**
+**When using Rails documentation skills:**
 
 - MCP documentation for Rails 8 job patterns
 - MCP filesystem for analyzing existing services
