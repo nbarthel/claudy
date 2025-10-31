@@ -20,14 +20,5 @@
     "documentation",
     "skills",
     "ref"
-  ],
-  "optionalDependencies": {
-    "mcp": {
-      "ref-tools-mcp": {
-        "description": "Token-efficient documentation access via Ref (enhances skills performance)",
-        "url": "https://github.com/ref-tools/ref-tools-mcp",
-        "required": false
-      }
-    }
-  }
+  ]
 }
