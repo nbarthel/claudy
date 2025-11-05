@@ -220,6 +220,18 @@ cp -r path/to/claudy/plugins/claudy/rails-api-workflow/agents .
 cp -r path/to/claudy/plugins/claudy/rails-api-workflow/commands .
 ```
 
+### Log Files
+
+The Rails workflow agents will create log files in `log/claude/` directory (following Rails convention of using `log/` not `logs/`).
+
+**Add to your `.gitignore`:**
+```
+# Claude Code agent logs
+/log/claude/
+```
+
+The agents automatically create this directory when needed and follow Rails logging conventions.
+
 ### Optional: Ref MCP Setup (Recommended)
 
 For token-efficient documentation fetching, install [ref-tools-mcp](https://github.com/ref-tools/ref-tools-mcp):
