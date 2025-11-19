@@ -1,6 +1,6 @@
 {
-  "name": "rails-dev-workflow",
-  "version": "0.1.0",
+  "name": "rails-workflow",
+  "version": "0.3.0",
   "description": "Comprehensive Rails development workflow with specialized AI agents",
   "keywords": [
     "rails",

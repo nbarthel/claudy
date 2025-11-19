@@ -17,15 +17,15 @@ Comprehensive Rails 8 development with specialized AI agents for models, control
 **Features:**
 
 - 7 specialized agents (architect, models, controllers, views, services, tests, devops)
-- 5 slash commands (swarm, scaffold, refactor, analyze, mcp-status)
+- 3 slash commands (dev, feature, refactor)
 - Multi-agent coordination via architect
 - Rails 8 best practices with Solid Queue, Action Cable
 - Pre-agent validation and pre-commit safety hooks
 - RSpec testing patterns
 
 **Agents:** 7 specialized agents
-**Commands:** 5 workflow commands
-**Hooks:** 2 safety hooks
+**Commands:** 3 workflow commands
+**Hooks:** 3 safety hooks
 **Installation:** `./scripts/install-plugin.sh rails-workflow /path/to/rails/project`
 
 ---

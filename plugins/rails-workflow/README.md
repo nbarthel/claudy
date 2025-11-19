@@ -77,7 +77,6 @@ Skills automatically validate and improve code quality **without explicit invoca
 | **rails-security-patterns** | ✅ Always | Prevent SQL injection, validate strong parameters | Blocks string interpolation in SQL, missing params |
 | **rails-performance-patterns** | ✅ Always | Detect N+1 queries, suggest indexes | Warns about missing eager loading |
 | **rails-test-patterns** | ✅ Always | Ensure AAA pattern, enforce 80%+ coverage | Validates test structure and coverage |
-| **rails-mcp-integration** | ⚠️ Deprecated | Replaced by documentation skills above | Use @rails-docs-search instead |
 | **agent-coordination-patterns** | ✅ Architect | Optimize multi-agent workflows | Parallel vs sequential decisions |
 
 **How They Work:**
@@ -661,6 +660,12 @@ git add . && git commit -m "Add Post model"
 **That's it!** Skills and hooks work automatically. No configuration needed.
 
 ## Version
+
+0.3.0 - Self-Contained Edition
+- Self-contained documentation skills (no MCP required)
+- Rails version detection
+- Offline capability with WebFetch fallback
+- Simplified installation
 
 0.2.0 - Enhanced Edition (v2.0)
 - Added 6 auto-invoking skills
