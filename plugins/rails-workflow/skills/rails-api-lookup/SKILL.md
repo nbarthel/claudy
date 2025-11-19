@@ -73,17 +73,26 @@ URL: https://api.rubyonrails.org/v7.1/ActiveRecord/QueryMethods.html#method-i-wh
 
 ### Step 3: Content Fetch
 
-**Primary Method (with ref-tools-mcp installed)**:
+**Method 1: Context7 (Fastest)**:
+```
+Tool: context7_fetch
+Query: "Rails [version] [class] [method] API"
+```
+
+**Method 2: Ref (Token-Efficient)**:
 ```
 Tool: ref_search_documentation
-Query: "Rails [version] [class_name] [method_name] API documentation"
-Example: "Rails 8.0 ActiveRecord Base where API documentation"
-
+Query: "Rails [version] [class] [method] API documentation"
 Then: ref_read_url
-URL: [URL from search results]
 ```
 
-**Fallback Method (without ref-tools-mcp)**:
+**Method 3: Tavily (Search)**:
+```
+Tool: tavily_search
+Query: "Rails [version] [class] [method] API documentation"
+```
+
+**Method 4: WebFetch (Fallback)**:
 ```
 Tool: WebFetch
 URL: [constructed URL from reference.md]
@@ -201,14 +210,17 @@ Common classes:
 **Tools used** (in order of preference):
 1. **@rails-version-detector** - Get project Rails version
 2. **Read** - Load `reference.md` API mappings
-3. **ref_search_documentation** (primary) - Search Rails API docs via Ref MCP
-4. **ref_read_url** (primary) - Fetch specific API page via Ref MCP
-5. **WebFetch** (fallback) - Fetch API docs if Ref not available
-6. **Grep** (optional) - Search for method names in cached docs
+3. **context7_fetch** (primary) - Fetch API docs via Context7 MCP
+4. **ref_search_documentation** (secondary) - Search Rails API docs via Ref MCP
+5. **tavily_search** (tertiary) - Optimized search via Tavily MCP
+6. **WebFetch** (fallback) - Fetch API docs if MCPs not available
+7. **Grep** (optional) - Search for method names in cached docs
 
-**Optional dependency**: ref-tools-mcp MCP server
-- If installed: Uses Ref for token-efficient API doc fetching
-- If not installed: Falls back to WebFetch (still works!)
+**Optional dependencies**:
+- **context7-mcp**: Fastest API documentation
+- **ref-tools-mcp**: Token-efficient API doc fetching
+- **tavily-mcp**: Optimized search for LLMs
+- If neither installed: Falls back to WebFetch (still works!)
 
 **URL construction**:
 ```

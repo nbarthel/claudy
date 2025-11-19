@@ -153,8 +153,8 @@ Parse user request for technology, domain, and architecture keywords:
 **Step 2: Invoke pattern-recognition Skill**
 ```python
 # Check if pattern-index.json exists (graceful degradation)
-if file_exists('~/.claude/data/pattern-index.json'):
-    suggested_patterns = invoke_skill('pattern-recognition', mode='suggest', context_tags=tags)
+if file_exists('.claude/data/rails-patterns.json'):
+    suggested_patterns = invoke_skill('rails-pattern-recognition', mode='suggest', context_tags=tags)
 ```
 
 **Step 3: Present Suggestions**

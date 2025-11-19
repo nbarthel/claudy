@@ -74,17 +74,26 @@ URL: https://guides.rubyonrails.org/v7.1/association_basics.html
 
 ### Step 3: Content Fetch
 
-**Primary Method (with ref-tools-mcp installed)**:
+**Method 1: Context7 (Fastest)**:
+```
+Tool: context7_fetch
+Query: "Rails [version] [topic]"
+```
+
+**Method 2: Ref (Token-Efficient)**:
 ```
 Tool: ref_search_documentation
 Query: "Rails [version] [topic] documentation"
-Example: "Rails 8.0 Active Record associations documentation"
-
 Then: ref_read_url
-URL: [URL from search results]
 ```
 
-**Fallback Method (without ref-tools-mcp)**:
+**Method 3: Tavily (Search)**:
+```
+Tool: tavily_search
+Query: "Rails [version] [topic] guide"
+```
+
+**Method 4: WebFetch (Fallback)**:
 ```
 Tool: WebFetch
 URL: [constructed URL from reference.md]
@@ -169,14 +178,17 @@ Some features may not be available in your version.
 **Tools used** (in order of preference):
 1. **@rails-version-detector** - Get project Rails version
 2. **Read** - Load `reference.md` topic mappings
-3. **ref_search_documentation** (primary) - Search Rails docs via Ref MCP
-4. **ref_read_url** (primary) - Fetch specific guide via Ref MCP
-5. **WebFetch** (fallback) - Fetch guide content if Ref not available
-6. **Grep** (optional) - Search local cached guides if available
+3. **context7_fetch** (primary) - Fetch curated docs via Context7 MCP
+4. **ref_search_documentation** (secondary) - Search Rails docs via Ref MCP
+5. **tavily_search** (tertiary) - Optimized search via Tavily MCP
+6. **WebFetch** (fallback) - Fetch guide content if MCPs not available
+7. **Grep** (optional) - Search local cached guides if available
 
-**Optional dependency**: ref-tools-mcp MCP server
-- If installed: Uses Ref for token-efficient doc fetching
-- If not installed: Falls back to WebFetch (still works!)
+**Optional dependencies**:
+- **context7-mcp**: Fastest, curated documentation
+- **ref-tools-mcp**: Token-efficient documentation search
+- **tavily-mcp**: Optimized search for LLMs
+- If neither installed: Falls back to WebFetch (still works!)
 
 **URL construction**:
 ```

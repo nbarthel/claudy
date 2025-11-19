@@ -209,17 +209,21 @@ This project uses [N] different approaches:
 
 **Tools used** (in order of preference):
 1. **Read** - Load `reference.md` pattern definitions
-2. **ref_search_documentation** (primary) - Search Rails pattern docs via Ref MCP
-3. **ref_read_url** (primary) - Fetch specific pattern guides via Ref MCP
-4. **Grep** - Search codebase for pattern matches
-5. **Read** - Extract code examples from matching files
-6. **WebFetch** (fallback) - Fetch pattern docs if Ref not available
-7. **WebSearch** (optional) - Fetch external best practices
-8. **Glob** - Find files matching pattern
+2. **context7_fetch** (primary) - Fetch curated patterns via Context7 MCP
+3. **ref_search_documentation** (secondary) - Search Rails pattern docs via Ref MCP
+4. **ref_read_url** (secondary) - Fetch specific pattern guides via Ref MCP
+5. **tavily_search** (tertiary) - Optimized search via Tavily MCP
+6. **Grep** - Search codebase for pattern matches
+7. **Read** - Extract code examples from matching files
+8. **WebFetch** (fallback) - Fetch pattern docs if MCPs not available
+9. **WebSearch** (optional) - Fetch external best practices
+10. **Glob** - Find files matching pattern
 
-**Optional dependency**: ref-tools-mcp MCP server
-- If installed: Uses Ref for token-efficient pattern documentation
-- If not installed: Falls back to WebFetch and local searches (still works!)
+**Optional dependencies**:
+- **context7-mcp**: Fastest pattern documentation
+- **ref-tools-mcp**: Token-efficient pattern search
+- **tavily-mcp**: Optimized search for LLMs
+- If neither installed: Falls back to WebFetch and local searches (still works!)
 
 **Search strategies**:
 
