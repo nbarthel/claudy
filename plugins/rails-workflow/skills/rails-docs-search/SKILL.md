@@ -3,9 +3,10 @@
 ---
 name: rails-docs-search
 description: Searches Rails Guides for conceptual documentation using Ref (primary) or WebFetch (fallback) with reference mappings
-version: 1.1.0
+version: 1.2.0
 author: Rails Workflow Team
 tags: [rails, documentation, guides, search, ref]
+priority: 3
 ---
 
 ## Purpose

@@ -4,8 +4,8 @@ description: Optimal multi-agent coordination strategies for the rails-architect
 auto_invoke: true
 trigger_for: [rails-architect]
 tags: [coordination, orchestration, multi-agent, workflow, parallel, sequential]
-priority: 1
-version: 2.0
+priority: 4
+version: 2.1
 ---
 
 # Agent Coordination Patterns Skill

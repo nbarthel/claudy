@@ -3,9 +3,10 @@
 ---
 name: rails-api-lookup
 description: Looks up Rails API documentation for specific classes/methods using Ref (primary) or WebFetch (fallback) with API reference
-version: 1.1.0
+version: 1.2.0
 author: Rails Workflow Team
 tags: [rails, api, documentation, reference, ref]
+priority: 3
 ---
 
 ## Purpose

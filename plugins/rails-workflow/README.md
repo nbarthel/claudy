@@ -1,15 +1,20 @@
-# Rails Workflow Plugin v0.4.0
+# Rails Workflow Plugin v0.5.0
 
 A comprehensive, self-contained Rails development plugin inspired by [claude-on-rails](https://github.com/obie/claude-on-rails) that orchestrates specialized AI agents to build full-stack Rails features. Unlike claude-on-rails which uses the claude-swarm gem, this plugin uses native Claude Code agent capabilities.
 
-## Version 0.4.0 - Opus 4.5 Optimized Edition ✨
+## Version 0.5.0 - Fully Optimized Edition ✨
 
-**What's New in v0.4.0:**
+**What's New in v0.5.0:**
+- 🎯 **Prioritized Skills** - Skills now have priority levels (1-5) for optimal execution order
+- ⚡ **Optimized Hooks** - Pre-agent hook reduced from 51 to 21 lines (~60% faster)
+- 🧹 **Leaner Agents** - Removed 695 lines of duplicate content (14% reduction)
+- 🔧 **Fixed Hook Targeting** - Hooks now only fire on Task tool, not every prompt
+
+**Previous Features (v0.4.0):**
 - 🧠 **Opus 4.5 Extended Thinking** - Leverages native extended thinking for complex architectural decisions
 - 💰 **Intelligent Model Selection** - Cost-efficient routing: haiku for validation, sonnet for CRUD, opus for architecture
 - ⚡ **54% Performance Improvement** - Extended thinking on complex tasks (Anthropic research)
 - 🎯 **Agent-Specific Model Hints** - Each agent specifies optimal model for its task type
-- 📊 **Token Budget Guidelines** - Clear guidance on thinking token allocation
 
 **Previous Features (v0.3.0):**
 - 🚀 **Self-Contained Documentation** - No external MCP server dependency required
@@ -689,13 +694,19 @@ git add . && git commit -m "Add Post model"
 
 ## Version
 
+0.5.0 - Fully Optimized Edition
+- Prioritized skills (1-5 scale for execution order)
+- Optimized pre-agent hook (~60% faster)
+- Removed 695 lines of duplicate content (14% leaner)
+- Fixed hook targeting (Task tool only)
+- Correct agent name references throughout
+
 0.4.0 - Opus 4.5 Optimized Edition
 - Opus 4.5 extended thinking integration
 - Intelligent model selection (haiku/sonnet/opus)
 - 54% performance improvement on complex tasks
 - Agent-specific model hints
 - Token budget guidelines
-- Cost-efficient routing
 
 0.3.0 - Self-Contained Edition
 - Self-contained documentation skills (no MCP required)

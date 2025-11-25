@@ -1,7 +1,8 @@
 ---
 name: rails-pattern-recognition
 description: Adaptive learning system that tracks implementation patterns, success rates, and performance metrics to suggest proven solutions for future tasks.
-version: 1.0
+version: 1.1
+priority: 5
 ---
 
 # Rails Pattern Recognition

@@ -3,9 +3,10 @@
 ---
 name: rails-pattern-finder
 description: Finds Rails code patterns and best practices using Ref (primary), Grep, and reference patterns with WebFetch fallback
-version: 1.1.0
+version: 1.2.0
 author: Rails Workflow Team
 tags: [rails, patterns, best-practices, code-examples, ref]
+priority: 3
 ---
 
 ## Purpose
