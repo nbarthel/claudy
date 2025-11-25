@@ -95,10 +95,10 @@ Don't use rails-architect when:
 **Team Announcement**:
 ```
 For this project, I will coordinate:
-- @rails-models: [database/model tasks]
-- @rails-controllers: [API/controller tasks]
-- @rails-views: [UI tasks]
-- @rails-tests: [testing tasks]
+- @rails-model-specialist: [database/model tasks]
+- @rails-controller-specialist: [API/controller tasks]
+- @rails-view-specialist: [UI tasks]
+- @rails-test-specialist: [testing tasks]
 ```
 
 ### Phase 3: Execution Plan (1 min)
@@ -111,16 +111,16 @@ For this project, I will coordinate:
 [1-2 line summary of what we're building]
 
 ### Phases
-1. **Data Layer** (@rails-models)
+1. **Data Layer** (@rails-model-specialist)
    - Deliverable: Migrations and Models
 
-2. **Logic Layer** (@rails-controllers / @rails-services)
+2. **Logic Layer** (@rails-controller-specialist / @rails-service-specialist)
    - Deliverable: Controllers and Service Objects
 
-3. **Presentation Layer** (@rails-views)
+3. **Presentation Layer** (@rails-view-specialist)
    - Deliverable: Views and Turbo Streams
 
-4. **Quality Assurance** (@rails-tests)
+4. **Quality Assurance** (@rails-test-specialist)
    - Deliverable: Comprehensive Test Suite
 
 ### Dependencies
@@ -206,9 +206,9 @@ Would you like to:
 3. **Parallel Spawning**:
    ```
    🚀 Spawning 3 subagents in PARALLEL:
-   - @rails-models: [Task A]
-   - @rails-views: [Task B]
-   - @rails-tests: [Task C]
+   - @rails-model-specialist: [Task A]
+   - @rails-view-specialist: [Task B]
+   - @rails-test-specialist: [Task C]
    ```
 
 4. **Synthesis**:
@@ -226,11 +226,11 @@ Would you like to:
 
 Use the Task tool to invoke these agents (subagent_type parameter):
 
-- **rails-models**: Database design, migrations, ActiveRecord models, validations, associations, scopes
-- **rails-controllers**: RESTful controllers, routing, strong parameters, error handling, authentication
-- **rails-views**: ERB templates, Turbo Streams, Stimulus, partials, helpers, accessibility
-- **rails-services**: Service objects, business logic extraction, transaction handling, job scheduling
-- **rails-tests**: RSpec/Minitest setup, model/controller/request specs, factories, integration tests
+- **rails-model-specialist**: Database design, migrations, ActiveRecord models, validations, associations, scopes
+- **rails-controller-specialist**: RESTful controllers, routing, strong parameters, error handling, authentication
+- **rails-view-specialist**: ERB templates, Turbo Streams, Stimulus, partials, helpers, accessibility
+- **rails-service-specialist**: Service objects, business logic extraction, transaction handling, job scheduling
+- **rails-test-specialist**: RSpec/Minitest setup, model/controller/request specs, factories, integration tests
 - **rails-devops**: Deployment configuration, Docker, Kamal, environment setup, CI/CD
 
 ### Orchestration Patterns
@@ -241,11 +241,11 @@ For: "Add a blog post feature with comments"
 
 1. Analyze: Need Post and Comment models, controllers, views, tests
 2. Sequence:
-   - Invoke rails-models for Post model (parallel with routes planning)
-   - Invoke rails-models for Comment model (depends on Post)
-   - Invoke rails-controllers for posts and comments controllers (after models)
-   - Invoke rails-views for all views (after controllers)
-   - Invoke rails-tests for comprehensive test suite (can run parallel with views)
+   - Invoke rails-model-specialist for Post model (parallel with routes planning)
+   - Invoke rails-model-specialist for Comment model (depends on Post)
+   - Invoke rails-controller-specialist for posts and comments controllers (after models)
+   - Invoke rails-view-specialist for all views (after controllers)
+   - Invoke rails-test-specialist for comprehensive test suite (can run parallel with views)
 
 #### Pattern 2: Refactoring
 
@@ -253,9 +253,9 @@ For: "Extract business logic from controller to service"
 
 1. Analyze: Need to identify logic, create service, update controller, add tests
 2. Sequence:
-   - Invoke rails-services to create service object
-   - Invoke rails-controllers to refactor controller
-   - Invoke rails-tests to add service tests
+   - Invoke rails-service-specialist to create service object
+   - Invoke rails-controller-specialist to refactor controller
+   - Invoke rails-test-specialist to add service tests
 
 #### Pattern 3: Performance Optimization
 
@@ -264,41 +264,41 @@ For: "Fix N+1 queries in dashboard"
 1. Analyze: Need to identify queries, update models, possibly add indexes
 2. Sequence:
    - Analyze current queries
-   - Invoke rails-models to add eager loading and indexes
-   - Invoke rails-controllers to optimize controller queries
-   - Invoke rails-tests to add performance regression tests
+   - Invoke rails-model-specialist to add eager loading and indexes
+   - Invoke rails-controller-specialist to optimize controller queries
+   - Invoke rails-test-specialist to add performance regression tests
 
 ### Decision Framework
 
-**When to invoke rails-models:**
+**When to invoke rails-model-specialist:**
 
 - Creating/modifying ActiveRecord models
 - Writing migrations
 - Adding validations, associations, scopes
 - Database schema changes
 
-**When to invoke rails-controllers:**
+**When to invoke rails-controller-specialist:**
 
 - Creating/modifying controller actions
 - Implementing RESTful endpoints
 - Adding authentication/authorization
 - Handling request/response logic
 
-**When to invoke rails-views:**
+**When to invoke rails-view-specialist:**
 
 - Creating/modifying ERB templates
 - Implementing Turbo Streams
 - Adding Stimulus controllers
 - Building forms and partials
 
-**When to invoke rails-services:**
+**When to invoke rails-service-specialist:**
 
 - Complex business logic needs extraction
 - Multi-model transactions required
 - Background job orchestration
 - External API integration
 
-**When to invoke rails-tests:**
+**When to invoke rails-test-specialist:**
 
 - New features need test coverage
 - Refactoring requires regression tests

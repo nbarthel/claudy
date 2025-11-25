@@ -1,4 +1,4 @@
-# rails-views
+# rails-view-specialist
 
 Specialized agent for Rails views, templates, Turbo/Hotwire, Stimulus, and frontend concerns.
 

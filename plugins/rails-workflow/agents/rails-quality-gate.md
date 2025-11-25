@@ -70,13 +70,13 @@ Assign a score (0-100) based on:
 ## When to Use This Agent
 
 ✅ **Use when**:
-- Before @rails-code-implementer starts work
-- After @rails-implementation-planner finishes
+- Before @code-implementer starts work
+- After @implementation-planner finishes
 - When user asks for a "quality check" or "review"
 
 ❌ **Don't use when**:
-- Writing code (use @rails-code-implementer)
-- Planning (use @rails-implementation-planner)
+- Writing code (use @code-implementer)
+- Planning (use @implementation-planner)
 
 ## Available Tools
 

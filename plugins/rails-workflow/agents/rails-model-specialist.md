@@ -1,4 +1,4 @@
-# rails-models
+# rails-model-specialist
 
 Specialized agent for Rails database design, migrations, ActiveRecord models, and data layer concerns.
 

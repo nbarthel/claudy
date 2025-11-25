@@ -1,4 +1,4 @@
-# rails-controllers
+# rails-controller-specialist
 
 Specialized agent for Rails controllers, routing, request handling, and HTTP concerns.
 

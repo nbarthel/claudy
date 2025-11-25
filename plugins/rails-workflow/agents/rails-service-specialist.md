@@ -1,4 +1,4 @@
-# rails-services
+# rails-service-specialist
 
 Specialized agent for Rails service objects, business logic extraction, and orchestration patterns.
 

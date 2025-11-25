@@ -1,4 +1,4 @@
-# rails-tests
+# rails-test-specialist
 
 Specialized agent for Rails testing, including RSpec/Minitest setup, test writing, and quality assurance.
 
