@@ -83,10 +83,10 @@ prompt: "As rails-architect, refactor the posts controller:
 4. Look for complex conditionals
 
 **Refactoring Plan:**
-1. rails-services: Create service objects for complex operations
-2. rails-controllers: Slim down controller to HTTP concerns only
-3. rails-models: Move model-specific logic to models
-4. rails-tests: Update/add tests for new structure
+1. rails-service-specialist: Create service objects for complex operations
+2. rails-controller-specialist: Slim down controller to HTTP concerns only
+3. rails-model-specialist: Move model-specific logic to models
+4. rails-test-specialist: Update/add tests for new structure
 
 **Goals:**
 - Controller actions under 10 lines
@@ -115,9 +115,9 @@ prompt: "As rails-architect, fix N+1 query issues in the dashboard:
 3. Find missing eager loading
 
 **Refactoring Plan:**
-1. rails-controllers: Add includes() for eager loading
-2. rails-models: Add database indexes if missing
-3. rails-tests: Add performance regression tests
+1. rails-controller-specialist: Add includes() for eager loading
+2. rails-model-specialist: Add database indexes if missing
+3. rails-test-specialist: Add performance regression tests
 
 **Verification:**
 - Run queries in development log
@@ -144,9 +144,9 @@ prompt: "As rails-architect, extract authentication logic to a concern:
 2. Find common patterns
 
 **Refactoring Plan:**
-1. rails-controllers: Create app/controllers/concerns/authenticable.rb
-2. rails-controllers: Include concern in controllers
-3. rails-tests: Add concern tests
+1. rails-controller-specialist: Create app/controllers/concerns/authenticable.rb
+2. rails-controller-specialist: Include concern in controllers
+3. rails-test-specialist: Add concern tests
 
 **Ensure:**
 - All controllers using the concern work correctly
@@ -174,9 +174,9 @@ prompt: "As rails-architect, move view logic to helpers:
 3. Look for formatting logic
 
 **Refactoring Plan:**
-1. rails-views: Extract logic to helper methods
-2. rails-views: Update views to use helpers
-3. rails-tests: Add helper specs
+1. rails-view-specialist: Extract logic to helper methods
+2. rails-view-specialist: Update views to use helpers
+3. rails-test-specialist: Add helper specs
 
 **Goals:**
 - Logic-free views

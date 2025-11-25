@@ -64,10 +64,10 @@ prompt: "As rails-architect, generate a complete Post feature with commenting fu
 - Complete test coverage
 
 **Implementation Steps:**
-1. rails-models: Create Post and Comment models with migrations
-2. rails-controllers: Generate posts and comments controllers
-3. rails-views: Create all views with Turbo support
-4. rails-tests: Add comprehensive test coverage
+1. rails-model-specialist: Create Post and Comment models with migrations
+2. rails-controller-specialist: Generate posts and comments controllers
+3. rails-view-specialist: Create all views with Turbo support
+4. rails-test-specialist: Add comprehensive test coverage
 
 Follow Rails conventions and modern Hotwire patterns."
 ```
@@ -97,10 +97,10 @@ prompt: "As rails-architect, implement user authentication:
 - Comprehensive tests
 
 **Implementation Steps:**
-1. rails-models: Create User model with Devise/custom auth
-2. rails-controllers: Sessions, registrations, passwords controllers
-3. rails-views: Login, signup, password reset views
-4. rails-tests: Authentication test coverage
+1. rails-model-specialist: Create User model with Devise/custom auth
+2. rails-controller-specialist: Sessions, registrations, passwords controllers
+3. rails-view-specialist: Login, signup, password reset views
+4. rails-test-specialist: Authentication test coverage
 
 Recommend Devise or provide custom implementation based on project needs."
 ```
@@ -129,9 +129,9 @@ prompt: "As rails-architect, create versioned API endpoints for posts:
 - Request specs
 
 **Implementation Steps:**
-1. rails-models: Add API token to User if needed
-2. rails-controllers: Create Api::V1::PostsController
-3. rails-tests: Comprehensive API request specs
+1. rails-model-specialist: Add API token to User if needed
+2. rails-controller-specialist: Create Api::V1::PostsController
+3. rails-test-specialist: Comprehensive API request specs
 
 Follow JSON:API or similar standards."
 ```

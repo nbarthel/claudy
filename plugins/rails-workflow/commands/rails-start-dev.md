@@ -42,7 +42,7 @@ prompt: "The user wants to build a blog feature for their Rails application with
 - Comments on posts
 - Tagging system with many-to-many relationship
 
-Please analyze this request as the rails-architect agent and coordinate the specialized Rails agents (rails-models, rails-controllers, rails-views, rails-tests) to implement this feature following Rails best practices.
+Please analyze this request as the rails-architect agent and coordinate the specialized Rails agents (rails-model-specialist, rails-controller-specialist, rails-view-specialist, rails-test-specialist) to implement this feature following Rails best practices.
 
 Ensure:
 1. Proper database design with migrations
@@ -68,9 +68,9 @@ prompt: "The user has a fat controller that needs refactoring. As the rails-arch
 
 1. Read and analyze the posts controller
 2. Identify logic that should be extracted
-3. Coordinate with rails-services agent to create service objects
-4. Coordinate with rails-controllers agent to slim down the controller
-5. Coordinate with rails-tests agent to add/update tests
+3. Coordinate with rails-service-specialist agent to create service objects
+4. Coordinate with rails-controller-specialist agent to slim down the controller
+5. Coordinate with rails-test-specialist agent to add/update tests
 6. Ensure all Rails best practices are followed"
 ```
 
@@ -88,10 +88,10 @@ model: "opus"
 description: "Implement real-time notifications"
 prompt: "The user wants to add real-time notifications to their Rails app using Turbo Streams. As the rails-architect agent, coordinate the implementation:
 
-1. Use rails-models for notification model
-2. Use rails-controllers for notification endpoints with Turbo Stream responses
-3. Use rails-views for Turbo Frame/Stream templates
-4. Use rails-tests for comprehensive testing
+1. Use rails-model-specialist for notification model
+2. Use rails-controller-specialist for notification endpoints with Turbo Stream responses
+3. Use rails-view-specialist for Turbo Frame/Stream templates
+4. Use rails-test-specialist for comprehensive testing
 5. Consider background jobs for notification delivery
 
 Follow modern Rails/Hotwire patterns."

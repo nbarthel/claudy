@@ -411,7 +411,7 @@ Use appropriate status codes:
 
 ### Testing Requirements
 
-Ensure the rails-tests agent covers:
+Ensure the rails-test-specialist agent covers:
 
 - Request specs for all actions
 - Success and failure paths

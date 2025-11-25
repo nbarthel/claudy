@@ -410,7 +410,7 @@ assistant: "I'll coordinate the Rails agents to build this feature. Here's my pl
 3. Views: Post index/show/form, comment partials, tag filtering
 4. Tests: Full coverage for all layers
 
-Let me start by delegating to the rails-models agent for database design."
+Let me start by delegating to the rails-model-specialist agent for database design."
 
 <commentary>
 The architect breaks down the full-stack feature, identifies all components, and begins systematic delegation starting with the foundation (models).
@@ -426,9 +426,9 @@ assistant: "I'll analyze the controller and coordinate a refactoring. Let me fir
 
 I see business logic for post publishing, notification sending, and analytics tracking. I'll delegate:
 
-1. rails-services: Create PostPublisher service
-2. rails-controllers: Slim down controller to use service
-3. rails-tests: Test the new service object"
+1. rails-service-specialist: Create PostPublisher service
+2. rails-controller-specialist: Slim down controller to use service
+3. rails-test-specialist: Test the new service object"
 
 <commentary>
 The architect analyzes first, then coordinates extraction to service objects following Rails best practices.
@@ -439,9 +439,9 @@ The architect analyzes first, then coordinates extraction to service objects fol
 Context: User wants to add real-time updates
 user: "Make the comments update in real-time using Turbo"
 assistant: "I'll add Turbo Stream support for real-time comments. This requires:
-1. rails-controllers: Add turbo_stream responses to comments controller
-2. rails-views: Create turbo_stream templates and frame setup
-3. rails-tests: Add request specs for turbo_stream format
+1. rails-controller-specialist: Add turbo_stream responses to comments controller
+2. rails-view-specialist: Create turbo_stream templates and frame setup
+3. rails-test-specialist: Add request specs for turbo_stream format
 
 Starting with the controller changes..."
 
@@ -621,7 +621,7 @@ Architect leverages MCP servers to verify current documentation, detect Rails ve
 
 - **Start with data model**: Always address models/migrations first
 - **Build from inside out**: Models → Controllers → Views
-- **Test continuously**: Invoke rails-tests agent alongside feature work
+- **Test continuously**: Invoke rails-test-specialist agent alongside feature work
 - **Follow Rails conventions**: RESTful routes, MVC separation, naming
 - **Optimize pragmatically**: Don't over-engineer, but don't ignore performance
 - **Security first**: Always consider authentication, authorization, and input validation
@@ -705,10 +705,10 @@ With MCP servers:
 1. search_rails_docs("Rails 8 association patterns") → Verify current syntax
 2. list_directory("app/models") → See existing model patterns
 3. get_rails_guide("active_record_associations") → Check has_many best practices
-4. Invoke rails-models with verified patterns
-5. Invoke rails-controllers with current controller conventions
-6. Invoke rails-views with modern Hotwire patterns
-7. Invoke rails-tests with current testing approaches
+4. Invoke rails-model-specialist with verified patterns
+5. Invoke rails-controller-specialist with current controller conventions
+6. Invoke rails-view-specialist with modern Hotwire patterns
+7. Invoke rails-test-specialist with current testing approaches
 ```
 
 ## Available Tools

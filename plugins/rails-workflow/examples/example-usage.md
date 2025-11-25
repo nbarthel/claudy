@@ -27,24 +27,24 @@ You: /rails-feature Blog post with title, body, and author
 
 **What the Architect Coordinates:**
 
-1. **rails-models** creates:
+1. **rails-model-specialist** creates:
    - Migration for posts table
    - Post model with validations
    - Associations to User
    - Published scope
 
-2. **rails-controllers** creates:
+2. **rails-controller-specialist** creates:
    - PostsController with CRUD actions
    - Strong parameters
    - Authorization checks
 
-3. **rails-views** creates:
+3. **rails-view-specialist** creates:
    - posts/index.html.erb
    - posts/show.html.erb
    - posts/_form.html.erb
    - posts/_post.html.erb partial
 
-4. **rails-tests** creates:
+4. **rails-test-specialist** creates:
    - Post model specs
    - PostsController specs
    - Request specs
@@ -61,23 +61,23 @@ You: /rails-feature Comments on posts with real-time updates using Turbo
 
 **What the Architect Coordinates:**
 
-1. **rails-models** creates:
+1. **rails-model-specialist** creates:
    - Comment model with validation
    - belongs_to :post, :user associations
    - Counter cache for post
 
-2. **rails-controllers** creates:
+2. **rails-controller-specialist** creates:
    - Nested CommentsController
    - Turbo Stream responses
 
-3. **rails-views** creates:
+3. **rails-view-specialist** creates:
    - comments/_comment.html.erb
    - comments/_form.html.erb
    - comments/create.turbo_stream.erb
    - comments/destroy.turbo_stream.erb
    - Turbo Frame in posts/show
 
-4. **rails-tests** creates:
+4. **rails-test-specialist** creates:
    - Comment model specs
    - System specs with JavaScript driver
 
@@ -92,17 +92,17 @@ You: /rails-dev Add a tagging system where posts can have multiple tags
 
 **What the Architect Coordinates:**
 
-1. **rails-models** creates:
+1. **rails-model-specialist** creates:
    - Tag model
    - PostTag join model
    - has_many :through associations
    - Unique validation on tag names
 
-2. **rails-controllers** updates:
+2. **rails-controller-specialist** updates:
    - PostsController to handle tag_ids
    - Tags controller for tag management
 
-3. **rails-views** updates:
+3. **rails-view-specialist** updates:
    - Form with tag selection
    - Tag display on posts
    - Tag filtering on index
@@ -126,23 +126,23 @@ You: /rails-feature User authentication using Devise
 
 **What the Architect Coordinates:**
 
-1. **rails-models** installs and configures:
+1. **rails-model-specialist** installs and configures:
    - Devise gem
    - User model with devise modules
    - Database migration
 
-2. **rails-controllers** creates:
+2. **rails-controller-specialist** creates:
    - Devise controllers customization
    - Authentication helpers
    - before_action filters
 
-3. **rails-views** creates:
+3. **rails-view-specialist** creates:
    - devise/sessions/new.html.erb
    - devise/registrations/new.html.erb
    - devise/passwords views
    - Navigation with login/logout
 
-4. **rails-tests** creates:
+4. **rails-test-specialist** creates:
    - User model specs
    - Authentication integration specs
 
@@ -174,17 +174,17 @@ You: /rails-feature API v1 endpoints for posts
 
 **What the Architect Coordinates:**
 
-1. **rails-controllers** creates:
+1. **rails-controller-specialist** creates:
    - Api::V1 namespace
    - Api::V1::PostsController
    - JSON responses with serialization
    - Pagination support
    - Error handling
 
-2. **rails-models** updates:
+2. **rails-model-specialist** updates:
    - User model with API token authentication
 
-3. **rails-tests** creates:
+3. **rails-test-specialist** creates:
    - API request specs
    - Authentication specs
    - JSON response validation
@@ -271,7 +271,7 @@ You: /rails-refactor Extract post publication logic to a service object
 
 **What the Architect Coordinates:**
 
-1. **rails-services** creates:
+1. **rails-service-specialist** creates:
 
 ```ruby
 # app/services/posts/publish_service.rb
@@ -305,7 +305,7 @@ module Posts
 end
 ```
 
-2. **rails-controllers** updates:
+2. **rails-controller-specialist** updates:
 
 ```ruby
 # app/controllers/posts_controller.rb
@@ -321,7 +321,7 @@ def publish
 end
 ```
 
-3. **rails-tests** creates:
+3. **rails-test-specialist** creates:
    - Service object specs with all edge cases
    - Updated controller specs
 
@@ -344,7 +344,7 @@ You: /rails-feature Real-time chat with rooms and messages using Turbo Streams
 
 **What the Architect Coordinates:**
 
-1. **rails-models** creates:
+1. **rails-model-specialist** creates:
 
 ```ruby
 # app/models/chat_room.rb
@@ -374,7 +374,7 @@ class Message < ApplicationRecord
 end
 ```
 
-2. **rails-controllers** creates:
+2. **rails-controller-specialist** creates:
 
 ```ruby
 # app/controllers/messages_controller.rb
@@ -395,7 +395,7 @@ class MessagesController < ApplicationController
 end
 ```
 
-3. **rails-views** creates:
+3. **rails-view-specialist** creates:
 
 ```erb
 <!-- app/views/chat_rooms/show.html.erb -->
@@ -410,7 +410,7 @@ end
 <% end %>
 ```
 
-4. **rails-tests** creates:
+4. **rails-test-specialist** creates:
    - System specs with JavaScript
    - Turbo Stream integration tests
 

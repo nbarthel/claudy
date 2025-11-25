@@ -291,7 +291,7 @@ end
 
 ### Testing Requirements
 
-Ensure the rails-tests agent covers:
+Ensure the rails-test-specialist agent covers:
 
 - Validation specs for all validations
 - Association specs using shoulda-matchers

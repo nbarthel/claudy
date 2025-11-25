@@ -212,11 +212,11 @@ hooks:
 This plugin provides a team of specialized Rails agents that work together:
 
 - **rails-architect**: Main coordinator, analyzes requests and delegates to specialists
-- **rails-models**: Database design, migrations, ActiveRecord models, associations
-- **rails-controllers**: RESTful controllers, routing, strong parameters, authorization
-- **rails-views**: ERB templates, Turbo Streams, Stimulus, accessibility
-- **rails-services**: Service objects, business logic extraction, transactions
-- **rails-tests**: RSpec/Minitest setup, comprehensive test coverage
+- **rails-model-specialist**: Database design, migrations, ActiveRecord models, associations
+- **rails-controller-specialist**: RESTful controllers, routing, strong parameters, authorization
+- **rails-view-specialist**: ERB templates, Turbo Streams, Stimulus, accessibility
+- **rails-service-specialist**: Service objects, business logic extraction, transactions
+- **rails-test-specialist**: RSpec/Minitest setup, comprehensive test coverage
 - **rails-devops**: Docker, Kamal, CI/CD, deployment configuration
 
 ## Installation
@@ -382,7 +382,7 @@ It:
 **Invoke directly:**
 You can also invoke specialized agents directly using the Task tool if you need focused work on a specific layer.
 
-### rails-models (Data Layer)
+### rails-model-specialist (Data Layer)
 
 Focuses on database design and ActiveRecord:
 
@@ -399,7 +399,7 @@ Focuses on database design and ActiveRecord:
 - Setting up associations
 - Optimizing queries
 
-### rails-controllers (HTTP Layer)
+### rails-controller-specialist (HTTP Layer)
 
 Handles request/response logic:
 
@@ -417,7 +417,7 @@ Handles request/response logic:
 - Request handling
 - Authorization logic
 
-### rails-views (Presentation Layer)
+### rails-view-specialist (Presentation Layer)
 
 Creates user interfaces:
 
@@ -435,7 +435,7 @@ Creates user interfaces:
 - Interactive components
 - Accessibility
 
-### rails-services (Business Logic)
+### rails-service-specialist (Business Logic)
 
 Extracts complex business logic:
 
@@ -452,7 +452,7 @@ Extracts complex business logic:
 - Payment processing
 - External integrations
 
-### rails-tests (Quality Assurance)
+### rails-test-specialist (Quality Assurance)
 
 Ensures comprehensive testing:
 
@@ -495,10 +495,10 @@ Manages infrastructure:
 You: /rails-feature Blog with posts, comments, and tags
 
 Architect analyzes and coordinates:
-1. rails-models: Creates Post, Comment, Tag models with associations
-2. rails-controllers: Generates posts, comments controllers
-3. rails-views: Builds index/show/form views with Turbo
-4. rails-tests: Adds comprehensive test coverage
+1. rails-model-specialist: Creates Post, Comment, Tag models with associations
+2. rails-controller-specialist: Generates posts, comments controllers
+3. rails-view-specialist: Builds index/show/form views with Turbo
+4. rails-test-specialist: Adds comprehensive test coverage
 
 Result: Complete, tested blog feature ready to use
 ```
@@ -510,9 +510,9 @@ You: /rails-refactor The orders controller has too much logic
 
 Architect coordinates:
 1. Reads app/controllers/orders_controller.rb
-2. rails-services: Creates OrderProcessor service object
-3. rails-controllers: Slims down controller to use service
-4. rails-tests: Adds service and controller specs
+2. rails-service-specialist: Creates OrderProcessor service object
+3. rails-controller-specialist: Slims down controller to use service
+4. rails-test-specialist: Adds service and controller specs
 
 Result: Clean, maintainable code following Rails patterns
 ```
@@ -523,10 +523,10 @@ Result: Clean, maintainable code following Rails patterns
 You: /rails-dev Add real-time notifications using Turbo Streams
 
 Architect implements:
-1. rails-models: Notification model with associations
-2. rails-controllers: Notifications controller with turbo_stream format
-3. rails-views: Turbo Frame/Stream templates
-4. rails-tests: System tests with JavaScript driver
+1. rails-model-specialist: Notification model with associations
+2. rails-controller-specialist: Notifications controller with turbo_stream format
+3. rails-view-specialist: Turbo Frame/Stream templates
+4. rails-test-specialist: System tests with JavaScript driver
 
 Result: Working real-time notifications
 ```
@@ -537,9 +537,9 @@ Result: Working real-time notifications
 You: /rails-feature API endpoints for products
 
 Architect creates:
-1. rails-models: Product model (if needed)
-2. rails-controllers: Api::V1::ProductsController with JSON responses
-3. rails-tests: Comprehensive request specs
+1. rails-model-specialist: Product model (if needed)
+2. rails-controller-specialist: Api::V1::ProductsController with JSON responses
+3. rails-test-specialist: Comprehensive request specs
 
 Result: Versioned API with proper serialization
 ```

@@ -276,9 +276,9 @@ Available methods in [class]:
 
 **Auto-invoked by**:
 - All 7 Rails agents when they need precise API signatures
-- @rails-models-agent for ActiveRecord methods
-- @rails-controllers-agent for ActionController methods
-- @rails-views-agent for ActionView helpers
+- @rails-model-specialist for ActiveRecord methods
+- @rails-controller-specialist for ActionController methods
+- @rails-view-specialist for ActionView helpers
 
 **Complements**:
 - @rails-docs-search (concepts vs API details)

@@ -427,7 +427,7 @@ end
 
 ### Testing Requirements
 
-Ensure the rails-tests agent covers:
+Ensure the rails-test-specialist agent covers:
 
 - System tests for user interactions
 - View component tests if using ViewComponent
