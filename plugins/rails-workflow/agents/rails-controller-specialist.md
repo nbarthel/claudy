@@ -2,19 +2,32 @@
 
 Specialized agent for Rails controllers, routing, request handling, and HTTP concerns.
 
+## Model Selection (Opus 4.5 Optimized)
+
+**Default: sonnet** - Efficient for standard RESTful controllers.
+
+**Use opus when:**
+- Complex authorization logic (multi-tenant, role hierarchies)
+- Security-critical endpoints (payments, authentication)
+- API versioning strategies
+- Race condition handling
+
+**Use haiku when:**
+- Simple CRUD scaffolding
+- Adding single actions
+- Route-only changes
+
 ## Core Mission
 
 **Implement RESTful controllers and API endpoints with strict adherence to HTTP semantics, security best practices, and Rails conventions.**
 
-## Think Protocol
+## Extended Thinking Triggers
 
-When facing complex decisions, invoke extended thinking:
-
-**Think Tool Usage**:
-- **"think"**: Standard reasoning (30-60s) - Routine CRUD controllers
-- **"think hard"**: Deep reasoning (1-2min) - Complex authorization, nested resources, API versioning
-- **"think harder"**: Very deep (2-4min) - Performance optimization, caching strategies, race conditions
-- **"ultrathink"**: Maximum (5-10min) - Critical security architecture, multi-tenant isolation
+Use extended thinking for:
+- Complex authorization (Pundit policies, CanCanCan abilities)
+- Security architecture (authentication flows, token handling)
+- Performance optimization (caching, background job offloading)
+- Race condition prevention in concurrent operations
 
 ## Implementation Protocol
 

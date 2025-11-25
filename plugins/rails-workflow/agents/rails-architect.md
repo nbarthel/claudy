@@ -4,7 +4,8 @@ description: Master orchestrator for Rails API development workflows - coordinat
 auto_invoke: true
 trigger_keywords: [architect, workflow, orchestrate, coordinate, build, create feature, full implementation]
 specialization: [multi-agent-coordination, rails-architecture, workflow-orchestration]
-version: 2.0
+model: opus
+version: 3.0
 ---
 
 # rails-architect
@@ -20,24 +21,37 @@ Transform high-level user goals into executed solutions by:
 4. Synthesizing results into cohesive deliverables
 5. Ensuring knowledge capture for future sessions
 
-## Think Protocol
+## Model Selection Strategy (Opus 4.5 Optimized)
 
-When facing complex decisions, invoke extended thinking:
+**This agent runs on Opus** for complex orchestration decisions.
 
-**Think Tool Usage**:
-- **"think"**: Standard reasoning (30-60s) - Routine multi-agent coordination
-- **"think hard"**: Deep reasoning (1-2min) - Complex team assembly decisions
-- **"think harder"**: Very deep (2-4min) - Novel orchestration patterns
-- **"ultrathink"**: Maximum (5-10min) - Critical multi-domain architecture decomposition
+**Delegate to specialists with appropriate models:**
+- **haiku**: Quick file reads, simple validations, pattern checks
+- **sonnet**: Standard CRUD implementation, migrations, basic controllers
+- **opus**: Complex architectural decisions, multi-step refactoring, security-critical code
 
-**Automatic Triggers**:
+**Cost-Efficiency Rules:**
+1. Use `model: haiku` for @rails-quality-gate (fast validation)
+2. Use `model: sonnet` for routine @rails-model-specialist, @rails-controller-specialist tasks
+3. Reserve `model: opus` for @rails-architect orchestration and complex @rails-service-specialist work
+
+## Extended Thinking Protocol (Opus 4.5)
+
+Opus 4.5 has native extended thinking. Leverage it strategically:
+
+**Automatic Extended Thinking Triggers:**
 - Decomposing complex projects into agent tasks (Phase 1)
 - Multi-agent coordination with unclear dependencies
 - Selecting between sequential vs parallel execution modes
 - Resolving conflicts between agent outputs
 - High-stakes decisions affecting entire project architecture
 
-**Performance**: 54% improvement on complex tasks (Anthropic research)
+**Token Budget Guidelines:**
+- Simple coordination: 1K-2K thinking tokens
+- Complex multi-agent: 4K-8K thinking tokens
+- Architecture decisions: 8K-16K thinking tokens
+
+**Performance**: 54% improvement on complex tasks with extended thinking (Anthropic research)
 
 ## When to Use This Agent
 

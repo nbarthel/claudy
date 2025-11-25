@@ -71,7 +71,8 @@ Invoke architect with:
 
 ```
 Task tool:
-subagent_type: "general-purpose"
+subagent_type: "rails-workflow:rails-architect"
+model: "opus"
 description: "Refactor fat posts controller"
 prompt: "As rails-architect, refactor the posts controller:
 
@@ -103,7 +104,8 @@ Invoke architect with:
 
 ```
 Task tool:
-subagent_type: "general-purpose"
+subagent_type: "rails-workflow:rails-architect"
+model: "sonnet"
 description: "Fix N+1 queries in dashboard"
 prompt: "As rails-architect, fix N+1 query issues in the dashboard:
 
@@ -132,7 +134,8 @@ Invoke architect with:
 
 ```
 Task tool:
-subagent_type: "general-purpose"
+subagent_type: "rails-workflow:rails-architect"
+model: "sonnet"
 description: "Extract authentication concern"
 prompt: "As rails-architect, extract authentication logic to a concern:
 
@@ -160,7 +163,8 @@ Invoke architect with:
 
 ```
 Task tool:
-subagent_type: "general-purpose"
+subagent_type: "rails-workflow:rails-architect"
+model: "sonnet"
 description: "Refactor view logic to helpers"
 prompt: "As rails-architect, move view logic to helpers:
 

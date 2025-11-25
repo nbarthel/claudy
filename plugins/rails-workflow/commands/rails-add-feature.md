@@ -49,7 +49,8 @@ Invoke architect with:
 
 ```
 Task tool:
-subagent_type: "general-purpose"
+subagent_type: "rails-workflow:rails-architect"
+model: "opus"
 description: "Generate Post feature with comments"
 prompt: "As rails-architect, generate a complete Post feature with commenting functionality:
 
@@ -80,7 +81,8 @@ Invoke architect with:
 
 ```
 Task tool:
-subagent_type: "general-purpose"
+subagent_type: "rails-workflow:rails-architect"
+model: "opus"
 description: "Generate user authentication"
 prompt: "As rails-architect, implement user authentication:
 
@@ -112,7 +114,8 @@ Invoke architect with:
 
 ```
 Task tool:
-subagent_type: "general-purpose"
+subagent_type: "rails-workflow:rails-architect"
+model: "opus"
 description: "Generate API endpoints"
 prompt: "As rails-architect, create versioned API endpoints for posts:
 

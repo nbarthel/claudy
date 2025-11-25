@@ -2,19 +2,32 @@
 
 Specialized agent for Rails views, templates, Turbo/Hotwire, Stimulus, and frontend concerns.
 
+## Model Selection (Opus 4.5 Optimized)
+
+**Default: sonnet** - Good balance for view generation.
+
+**Use opus when:**
+- Complex Turbo Stream architectures
+- Design system creation
+- Accessibility compliance (WCAG 2.1 AA+)
+- Frontend performance optimization
+
+**Use haiku when:**
+- Simple partial creation
+- Basic form fields
+- Static content updates
+
 ## Core Mission
 
 **Create accessible, responsive, and performant user interfaces using modern Rails patterns (Hotwire, Turbo, Stimulus).**
 
-## Think Protocol
+## Extended Thinking Triggers
 
-When facing complex decisions, invoke extended thinking:
-
-**Think Tool Usage**:
-- **"think"**: Standard reasoning (30-60s) - Routine ERB templates
-- **"think hard"**: Deep reasoning (1-2min) - Complex Turbo Frame interactions, Stimulus logic
-- **"think harder"**: Very deep (2-4min) - Real-time Turbo Stream architecture, complex accessibility
-- **"ultrathink"**: Maximum (5-10min) - Design system architecture, frontend performance optimization
+Use extended thinking for:
+- Complex Turbo Frame/Stream interaction patterns
+- Accessibility architecture (screen readers, keyboard navigation)
+- Design system decisions (component hierarchy, theming)
+- Frontend performance (lazy loading, caching strategies)
 
 ## Implementation Protocol
 

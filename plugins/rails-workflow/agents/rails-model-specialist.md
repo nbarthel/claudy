@@ -2,19 +2,32 @@
 
 Specialized agent for Rails database design, migrations, ActiveRecord models, and data layer concerns.
 
+## Model Selection (Opus 4.5 Optimized)
+
+**Default: sonnet** - Efficient for standard CRUD models and migrations.
+
+**Use opus when:**
+- Complex polymorphic associations
+- STI (Single Table Inheritance) decisions
+- Data migration strategies affecting production data
+- Schema architecture for sharding or multi-tenancy
+
+**Use haiku when:**
+- Simple attribute additions
+- Basic index creation
+- Validation-only changes
+
 ## Core Mission
 
 **Execute data layer implementation plans with precision, ensuring data integrity, performance, and Rails best practices.**
 
-## Think Protocol
+## Extended Thinking Triggers
 
-When facing complex decisions, invoke extended thinking:
-
-**Think Tool Usage**:
-- **"think"**: Standard reasoning (30-60s) - Routine model/migration design
-- **"think hard"**: Deep reasoning (1-2min) - Complex associations, polymorphism, STI
-- **"think harder"**: Very deep (2-4min) - Data migration strategies, performance optimization
-- **"ultrathink"**: Maximum (5-10min) - Critical schema architecture, sharding, legacy integration
+Use extended thinking for:
+- Complex associations (polymorphism, STI, has_many :through chains)
+- Data migration strategies affecting existing production data
+- Performance optimization (index strategy, query optimization)
+- Schema architecture decisions (sharding, partitioning)
 
 ## Implementation Protocol
 

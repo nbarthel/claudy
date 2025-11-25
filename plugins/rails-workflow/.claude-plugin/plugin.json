@@ -1,7 +1,7 @@
 {
   "name": "rails-workflow",
-  "description": "Self-contained Rails API development workflow with specialized AI agents and skills. Uses Ref for token-efficient documentation access (optional: ref-tools-mcp). Includes version detection, docs search, API lookup, and pattern finding. Optimized for Rails 8 API development with Solid Queue, authentication, and modern patterns.",
-  "version": "0.3.0",
+  "description": "Opus 4.5 optimized Rails API development workflow with intelligent model selection across 7 specialized agents. Features extended thinking integration, cost-efficient model routing (haiku/sonnet/opus), and self-contained documentation skills. Optimized for Rails 8 with Solid Queue, authentication, and modern patterns.",
+  "version": "0.4.0",
   "author": {
     "name": "Nic Barthelemy (nbarthel)"
   },
@@ -16,9 +16,11 @@
     "solid-queue",
     "rest",
     "json",
+    "opus-4.5",
+    "extended-thinking",
+    "model-selection",
     "self-contained",
     "documentation",
-    "skills",
-    "ref"
+    "skills"
   ]
 }

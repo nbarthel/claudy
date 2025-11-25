@@ -16,7 +16,8 @@ You are the Rails Development Coordinator. Your role is to analyze the user's re
 
 Use the Task tool with:
 
-- **subagent_type**: "general-purpose"
+- **subagent_type**: "rails-workflow:rails-architect"
+- **model**: "opus" (for complex features) or "sonnet" (for simple changes)
 - **description**: Brief summary of the task
 - **prompt**: Detailed request including:
   - User's original request
@@ -33,7 +34,8 @@ You should invoke the architect with:
 
 ```
 Task tool:
-subagent_type: "general-purpose"
+subagent_type: "rails-workflow:rails-architect"
+model: "opus"
 description: "Build blog feature with posts, comments, and tags"
 prompt: "The user wants to build a blog feature for their Rails application with the following requirements:
 - Posts with title, body, and author
@@ -59,7 +61,8 @@ You should invoke the architect with:
 
 ```
 Task tool:
-subagent_type: "general-purpose"
+subagent_type: "rails-workflow:rails-architect"
+model: "opus"
 description: "Refactor posts controller"
 prompt: "The user has a fat controller that needs refactoring. As the rails-architect agent, please:
 
@@ -80,7 +83,8 @@ You should invoke the architect with:
 
 ```
 Task tool:
-subagent_type: "general-purpose"
+subagent_type: "rails-workflow:rails-architect"
+model: "opus"
 description: "Implement real-time notifications"
 prompt: "The user wants to add real-time notifications to their Rails app using Turbo Streams. As the rails-architect agent, coordinate the implementation:
 

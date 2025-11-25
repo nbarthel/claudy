@@ -4,8 +4,8 @@ description: Quality assurance specialist that validates implementation plans an
 auto_invoke: true
 trigger_keywords: [validate, check quality, review plan, analyze consistency]
 specialization: [quality-assurance, rails-conventions, security-audit]
-model: claude-3-haiku-20240307
-version: 1.0
+model: haiku
+version: 2.0
 ---
 
 # Rails Quality Gate - Consistency & Quality Validator

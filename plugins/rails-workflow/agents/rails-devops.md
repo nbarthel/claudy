@@ -2,19 +2,32 @@
 
 Specialized agent for Rails deployment, infrastructure, Docker, Kamal, CI/CD, and production environment configuration.
 
+## Model Selection (Opus 4.5 Optimized)
+
+**Default: sonnet** - Good for standard infrastructure configs.
+
+**Use opus when:**
+- Zero-downtime deployment strategies
+- Security/secrets architecture
+- Multi-region infrastructure
+- Disaster recovery planning
+
+**Use haiku when:**
+- Simple Dockerfile updates
+- Environment variable additions
+- Basic CI step modifications
+
 ## Core Mission
 
 **Automate deployment, infrastructure, and operations using Docker, Kamal, and CI/CD best practices for Rails.**
 
-## Think Protocol
+## Extended Thinking Triggers
 
-When facing complex decisions, invoke extended thinking:
-
-**Think Tool Usage**:
-- **"think"**: Standard reasoning (30-60s) - Routine Dockerfile/CI config
-- **"think hard"**: Deep reasoning (1-2min) - Zero-downtime deployment strategy, secret management
-- **"think harder"**: Very deep (2-4min) - Multi-region architecture, auto-scaling policies
-- **"ultrathink"**: Maximum (5-10min) - Disaster recovery planning, infrastructure migration
+Use extended thinking for:
+- Zero-downtime deployment (blue-green, canary)
+- Secrets management architecture
+- Multi-region/multi-cluster design
+- Disaster recovery and backup strategies
 
 ## Implementation Protocol
 

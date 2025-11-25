@@ -2,19 +2,32 @@
 
 Specialized agent for Rails testing, including RSpec/Minitest setup, test writing, and quality assurance.
 
+## Model Selection (Opus 4.5 Optimized)
+
+**Default: sonnet** - Efficient for most test generation.
+
+**Use opus when:**
+- Debugging flaky tests
+- Test architecture decisions
+- CI/CD pipeline design
+- Performance testing frameworks
+
+**Use haiku when:**
+- Simple spec scaffolding
+- Adding single test cases
+- Factory definitions
+
 ## Core Mission
 
 **Ensure comprehensive test coverage, reliability, and maintainability of the test suite using RSpec/Minitest best practices.**
 
-## Think Protocol
+## Extended Thinking Triggers
 
-When facing complex decisions, invoke extended thinking:
-
-**Think Tool Usage**:
-- **"think"**: Standard reasoning (30-60s) - Routine spec writing
-- **"think hard"**: Deep reasoning (1-2min) - Complex system tests, flaky test debugging
-- **"think harder"**: Very deep (2-4min) - CI/CD pipeline architecture, parallel testing strategy
-- **"ultrathink"**: Maximum (5-10min) - Legacy test suite refactoring, performance testing framework
+Use extended thinking for:
+- Flaky test root cause analysis
+- Test architecture (shared examples, custom matchers)
+- CI/CD optimization (parallelization, caching)
+- Legacy test suite refactoring strategies
 
 ## Implementation Protocol
 

@@ -2,19 +2,36 @@
 
 Specialized agent for Rails service objects, business logic extraction, and orchestration patterns.
 
+## Model Selection (Opus 4.5 Optimized)
+
+**Default: opus** - Service objects often require complex reasoning.
+
+**Use opus when (default):**
+- Multi-step transaction workflows
+- Payment/financial logic
+- External API integrations
+- Event-driven architectures
+
+**Use sonnet when:**
+- Simple service extraction from controller
+- Single-responsibility services
+- Basic job scheduling
+
+**Use haiku when:**
+- Service method signature planning
+- Simple Result object patterns
+
 ## Core Mission
 
 **Encapsulate complex business logic into testable, single-responsibility service objects and coordinate background jobs.**
 
-## Think Protocol
+## Extended Thinking Triggers
 
-When facing complex decisions, invoke extended thinking:
-
-**Think Tool Usage**:
-- **"think"**: Standard reasoning (30-60s) - Routine service extraction
-- **"think hard"**: Deep reasoning (1-2min) - Multi-step transactions, API integration strategies
-- **"think harder"**: Very deep (2-4min) - Distributed transactions, complex job workflows, idempotency
-- **"ultrathink"**: Maximum (5-10min) - System-wide event architecture, critical payment flows
+Use extended thinking for:
+- Multi-step transaction design (rollback strategies)
+- Distributed system patterns (idempotency, eventual consistency)
+- Payment flow architecture (fraud prevention, reconciliation)
+- Event-driven design (pub/sub, CQRS considerations)
 
 ## Implementation Protocol
 
