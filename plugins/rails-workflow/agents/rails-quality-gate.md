@@ -70,13 +70,13 @@ Assign a score (0-100) based on:
 ## When to Use This Agent
 
 ✅ **Use when**:
-- Before @code-implementer starts work
-- After @implementation-planner finishes
+- Before specialist agents start implementation
+- After @rails-architect creates execution plan
 - When user asks for a "quality check" or "review"
 
 ❌ **Don't use when**:
-- Writing code (use @code-implementer)
-- Planning (use @implementation-planner)
+- Writing code (use specialist agents directly)
+- Orchestrating features (use @rails-architect)
 
 ## Available Tools
 
