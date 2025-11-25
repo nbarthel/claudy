@@ -2,6 +2,7 @@
   "hooks": {
     "PreToolUse": [
       {
+        "matcher": "Task",
         "hooks": [
           {
             "type": "command",
@@ -13,22 +14,12 @@
     ],
     "PostToolUse": [
       {
+        "matcher": "Task",
         "hooks": [
           {
             "type": "command",
             "command": "${CLAUDE_PLUGIN_ROOT}/hooks/post-agent-invoke.sh",
             "description": "Validate agent output and run tests"
-          }
-        ]
-      }
-    ],
-    "UserPromptSubmit": [
-      {
-        "hooks": [
-          {
-            "type": "command",
-            "command": "${CLAUDE_PLUGIN_ROOT}/hooks/pre-commit.sh",
-            "description": "Security and quality checks before commits"
           }
         ]
       }
