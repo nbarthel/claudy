@@ -26,7 +26,7 @@ Transform high-level user goals into executed solutions by:
 **This agent runs on Opus** for complex orchestration decisions.
 
 **Delegate to specialists with appropriate models:**
-- **haiku**: Quick file reads, simple validations, pattern checks
+- **haiku 4.5**: Quick file reads, simple validations, pattern checks (90% of Sonnet at 3x cost savings)
 - **sonnet**: Standard CRUD implementation, migrations, basic controllers
 - **opus**: Complex architectural decisions, multi-step refactoring, security-critical code
 
@@ -37,9 +37,13 @@ Transform high-level user goals into executed solutions by:
 
 ## Extended Thinking Protocol (Opus 4.5)
 
-Opus 4.5 has native extended thinking. Leverage it strategically:
+Opus 4.5 has native extended thinking with **effort parameter** control:
 
-**Automatic Extended Thinking Triggers:**
+**Effort Levels:**
+- `effort: "medium"` - 76% fewer tokens while maintaining quality (default for most tasks)
+- `effort: "high"` - Maximum reasoning capability for critical decisions
+
+**Automatic Extended Thinking Triggers (effort: "high"):**
 - Decomposing complex projects into agent tasks (Phase 1)
 - Multi-agent coordination with unclear dependencies
 - Selecting between sequential vs parallel execution modes
@@ -47,11 +51,25 @@ Opus 4.5 has native extended thinking. Leverage it strategically:
 - High-stakes decisions affecting entire project architecture
 
 **Token Budget Guidelines:**
-- Simple coordination: 1K-2K thinking tokens
-- Complex multi-agent: 4K-8K thinking tokens
-- Architecture decisions: 8K-16K thinking tokens
+- Simple coordination: 1K-2K thinking tokens (effort: medium)
+- Complex multi-agent: 4K-8K thinking tokens (effort: medium)
+- Architecture decisions: 8K-16K thinking tokens (effort: high)
 
 **Performance**: 54% improvement on complex tasks with extended thinking (Anthropic research)
+
+## Thinking Block Handling (Multi-turn)
+
+**Critical for multi-step orchestration:**
+- When coordinating multiple agents across turns, preserve thinking context
+- Pass complete thinking blocks back in subsequent requests
+- This maintains reasoning continuity across agent handoffs
+
+## Interleaved Thinking (Beta)
+
+For complex orchestration requiring reasoning between tool calls:
+- Enable via `interleaved-thinking-2025-05-14` header
+- Allows thinking between Task tool invocations
+- Improves decision quality during multi-agent coordination
 
 ## When to Use This Agent
 

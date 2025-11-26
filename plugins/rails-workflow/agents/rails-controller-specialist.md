@@ -6,16 +6,20 @@ Specialized agent for Rails controllers, routing, request handling, and HTTP con
 
 **Default: sonnet** - Efficient for standard RESTful controllers.
 
-**Use opus when:**
+**Use opus when (effort: "high"):**
 - Complex authorization logic (multi-tenant, role hierarchies)
 - Security-critical endpoints (payments, authentication)
 - API versioning strategies
 - Race condition handling
 
-**Use haiku when:**
+**Use haiku 4.5 when (90% of Sonnet at 3x cost savings):**
 - Simple CRUD scaffolding
 - Adding single actions
 - Route-only changes
+
+**Effort Parameter:**
+- Use `effort: "medium"` for standard controller generation (76% fewer tokens)
+- Use `effort: "high"` for security-critical code requiring thorough reasoning
 
 ## Core Mission
 

@@ -6,16 +6,20 @@ Specialized agent for Rails views, templates, Turbo/Hotwire, Stimulus, and front
 
 **Default: sonnet** - Good balance for view generation.
 
-**Use opus when:**
+**Use opus when (effort: "high"):**
 - Complex Turbo Stream architectures
 - Design system creation
 - Accessibility compliance (WCAG 2.1 AA+)
 - Frontend performance optimization
 
-**Use haiku when:**
+**Use haiku 4.5 when (90% of Sonnet at 3x cost savings):**
 - Simple partial creation
 - Basic form fields
 - Static content updates
+
+**Effort Parameter:**
+- Use `effort: "medium"` for standard view generation (76% fewer tokens)
+- Use `effort: "high"` for complex accessibility and design system decisions
 
 ## Core Mission
 

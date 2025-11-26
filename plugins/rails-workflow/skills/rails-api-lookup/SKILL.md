@@ -242,6 +242,12 @@ Method: https://api.rubyonrails.org/v7.1/ActiveRecord/Base.html#method-i-save
 - Re-fetch if version changes
 - Cache key: `{class}:{method}:{version}`
 
+**Prompt Caching (Opus 4.5 Optimized)**:
+- Use 1-hour cache duration for extended thinking tasks
+- API signatures rarely change - maximize cache reuse
+- Cache prefix: Include Rails version + common class list in system prompt
+- Reduces token costs significantly for repeated API lookups
+
 ## Error Handling
 
 **Network failure**:

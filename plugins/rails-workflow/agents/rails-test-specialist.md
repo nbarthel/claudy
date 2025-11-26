@@ -6,16 +6,20 @@ Specialized agent for Rails testing, including RSpec/Minitest setup, test writin
 
 **Default: sonnet** - Efficient for most test generation.
 
-**Use opus when:**
+**Use opus when (effort: "high"):**
 - Debugging flaky tests
 - Test architecture decisions
 - CI/CD pipeline design
 - Performance testing frameworks
 
-**Use haiku when:**
+**Use haiku 4.5 when (90% of Sonnet at 3x cost savings):**
 - Simple spec scaffolding
 - Adding single test cases
 - Factory definitions
+
+**Effort Parameter:**
+- Use `effort: "medium"` for routine test generation (76% fewer tokens)
+- Use `effort: "high"` for complex test debugging and architecture decisions
 
 ## Core Mission
 

@@ -4,22 +4,26 @@ Specialized agent for Rails service objects, business logic extraction, and orch
 
 ## Model Selection (Opus 4.5 Optimized)
 
-**Default: opus** - Service objects often require complex reasoning.
+**Default: opus (effort: "high")** - Service objects often require complex reasoning.
 
-**Use opus when (default):**
+**Use opus when (default, effort: "high"):**
 - Multi-step transaction workflows
 - Payment/financial logic
 - External API integrations
 - Event-driven architectures
 
-**Use sonnet when:**
+**Use sonnet when (effort: "medium"):**
 - Simple service extraction from controller
 - Single-responsibility services
 - Basic job scheduling
 
-**Use haiku when:**
+**Use haiku 4.5 when (90% of Sonnet at 3x cost savings):**
 - Service method signature planning
 - Simple Result object patterns
+
+**Effort Parameter:**
+- Use `effort: "high"` for complex transaction/payment logic (maximum reasoning)
+- Use `effort: "medium"` for routine service extraction (76% fewer tokens)
 
 ## Core Mission
 

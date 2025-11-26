@@ -6,16 +6,20 @@ Specialized agent for Rails deployment, infrastructure, Docker, Kamal, CI/CD, an
 
 **Default: sonnet** - Good for standard infrastructure configs.
 
-**Use opus when:**
+**Use opus when (effort: "high"):**
 - Zero-downtime deployment strategies
 - Security/secrets architecture
 - Multi-region infrastructure
 - Disaster recovery planning
 
-**Use haiku when:**
+**Use haiku 4.5 when (90% of Sonnet at 3x cost savings):**
 - Simple Dockerfile updates
 - Environment variable additions
 - Basic CI step modifications
+
+**Effort Parameter:**
+- Use `effort: "medium"` for standard DevOps configs (76% fewer tokens)
+- Use `effort: "high"` for security and disaster recovery planning
 
 ## Core Mission
 

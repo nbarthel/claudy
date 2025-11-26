@@ -1,7 +1,7 @@
 {
   "name": "rails-workflow",
-  "description": "Opus 4.5 optimized Rails API development workflow with intelligent model selection across 7 specialized agents. Features extended thinking integration, cost-efficient model routing (haiku/sonnet/opus), prioritized skills, and optimized hooks. Optimized for Rails 8 with Solid Queue, authentication, and modern patterns.",
-  "version": "0.5.0",
+  "description": "Opus 4.5 optimized Rails API development workflow with effort parameter control, Haiku 4.5 integration (90% quality at 3x savings), thinking block handling, interleaved thinking support, and prompt caching recommendations. Features 7 specialized agents with intelligent model selection across 7 specialized agents.",
+  "version": "0.6.0",
   "author": {
     "name": "Nic Barthelemy (nbarthel)"
   },

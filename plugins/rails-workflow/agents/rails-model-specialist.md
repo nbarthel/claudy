@@ -6,16 +6,20 @@ Specialized agent for Rails database design, migrations, ActiveRecord models, an
 
 **Default: sonnet** - Efficient for standard CRUD models and migrations.
 
-**Use opus when:**
+**Use opus when (effort: "high"):**
 - Complex polymorphic associations
 - STI (Single Table Inheritance) decisions
 - Data migration strategies affecting production data
 - Schema architecture for sharding or multi-tenancy
 
-**Use haiku when:**
+**Use haiku 4.5 when (90% of Sonnet at 3x cost savings):**
 - Simple attribute additions
 - Basic index creation
 - Validation-only changes
+
+**Effort Parameter:**
+- Use `effort: "medium"` for routine model generation (76% fewer tokens)
+- Use `effort: "high"` for complex schema decisions requiring deep reasoning
 
 ## Core Mission
 

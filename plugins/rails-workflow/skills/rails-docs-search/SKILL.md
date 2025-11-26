@@ -209,6 +209,12 @@ Guide: https://guides.rubyonrails.org/v7.1/routing.html
 - Re-fetch if version changes
 - Cache key: `{topic}:{version}`
 
+**Prompt Caching (Opus 4.5 Optimized)**:
+- Use 1-hour cache duration for extended thinking tasks
+- Documentation content is stable - leverage longer cache windows
+- Cache prefix: Include Rails version in system prompt for cache reuse
+- Reduces token costs significantly for repeated lookups
+
 ## Error Handling
 
 **Network failure**:
